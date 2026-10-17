@@ -17,7 +17,7 @@ visualizador 3D (Three.js) que mostra, quase em tempo real, qual tarefa está se
 
 ### #1.1 — Copiar as regras do quadro para `.claude/rules/tasks/`
 
-**Próximo passo:** aguardar o usuário liberar a execução.
+**Próximo passo:** ✅ Concluída (2026-10-17 11:21). Nada a fazer.
 
 - **Nível:** LEVE — só cópia de arquivos `.md`, sem lógica.
 - **Modelo:** só Haiku — nunca outro.
@@ -26,11 +26,16 @@ visualizador 3D (Three.js) que mostra, quase em tempo real, qual tarefa está se
   repositório, sem nada específico do `aulasenai`.
 - **Critérios de aceitação:** os 4 arquivos presentes; referências a arquivos que não existem aqui
   ajustadas ou retiradas.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit de fechamento da #1.1 (`git log --grep="#1.1"`): as 4 cópias em
+  `.claude/rules/tasks/`, com as referências a `tasks/RECADOS.md` e ao visualizador gerado
+  retiradas (não existem aqui); a linha da `#1.1` foi para o `task_complete.md`.
+- **Verificação:** os 4 arquivos existem e têm o mesmo tamanho dos originais antes dos ajustes
+  (4785, 2771, 5252 e 2588 bytes); busca por `RECADOS`, `visualizador` e `aulasenai` nas cópias
+  não acha nada.
 
 ### #1.2 — Escrever o `CLAUDE.md` do visualizador
 
-**Próximo passo:** aguardar a #1.1 e a liberação do usuário.
+**Próximo passo:** liberada: a #1.1 está ✅. Quem pega é o Opus 5.5+ ou Fable (PESADO), não o Haiku.
 
 - **Nível:** PESADO — define a arquitetura do projeto novo.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro.
