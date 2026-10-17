@@ -216,7 +216,8 @@ dele está nas Pendências do `STATUS.md` (depende do usuário).
 
 ### #2.6 — Modelo do quadro
 
-**Próximo passo:** plano aprovado (2026-10-17 11:42); pegar quando as dependências estiverem ✅, só pelo modelo da linha `Modelo`.
+**Próximo passo:** ✅ Concluída (2026-10-17 12:36). Nada a fazer; a #2.8 (painel) já pode ser pega
+e a #2.7 (cena) só espera as outras subtarefas listadas nas dependências dela.
 
 - **Nível:** MEDIO — regra em 1 arquivo.
 - **Modelo:** só Sonnet — nunca outro.
@@ -225,7 +226,40 @@ dele está nas Pendências do `STATUS.md` (depende do usuário).
   24 h; marca reserva parada (> 24 h); conta por status para o painel.
 - **Critérios de aceitação:** sem DOM e sem Three.js; rodando com `node` contra os 2 quadros, o
   resumo impresso bate com as tabelas.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit de fechamento da #2.6 (`git log --grep="#2.6"`): `assets/js/modelo/quadro.js`.
+  Função principal: `montarModelo(leituras, agora?)`, com `leituras = [{ fonte, resultado }]`
+  (a `fonte` da configuração e o `resultado` do `ClienteGithub`), devolvendo
+  `{ geradoEm, projetos, totais }`. **Projeto:** `id` (`dono/repo`), `nome`, `commit {sha, data}`,
+  `lidoEm`, `erro`, `frentes` e `contagens`. **Frente:** `nome`, `situacao` (`ativa`,
+  `aguardando-usuario`, `encerrada`), `atualizadoEm`, `tarefaTexto`, `derivada` e `reservas`.
+  **Reserva (bloco da cena):** `id`, `titulo`, `nivel`, `ia`, `modelo`, `frente`, `desde`, `parada`
+  e `urlEtapa`. **Contagens:** `tarefas { total, maes, porStatus }` (a mãe só entra em `maes`),
+  `frentes { ativa, aguardando-usuario, encerrada, encerradaOculta }` e
+  `reservas { total, paradas }`. **Totais:** `reservas`, `paradas`, `frentesAtivas` e
+  `aguardandoUsuario`. Também exporta `montarProjeto`, `listarReservas`, `estaParada` e
+  `contarTarefas`. Frentes vêm ordenadas: ativas (a atualizada há menos tempo primeiro),
+  aguardando o usuário, encerradas.
+  **Regras decididas na leitura:** bloco = subtarefa não-mãe em 🔄 com reserva de verdade (✅,
+  mãe, livre e pendente com reserva são ignorados); a frente da reserva é achada pelo nome na
+  tabela, e se não estiver lá (ou o quadro não tiver tabela) nasce uma frente `derivada`, ativa,
+  com a data da reserva mais recente; **parada** = mais de 24 h sem atividade, onde atividade é
+  a data mais recente entre o `desde` da reserva e a atualização da frente **na tabela**; sem
+  nenhuma data, não é parada; ⏹️ com mais de 24 h some da lista e entra em `encerradaOculta`.
+- **Verificação:** módulos copiados para a pasta temporária da sessão (`package.json`
+  `"type": "module"`, mesma estrutura de pastas) e rodados com `node`, com a hora fixada em
+  2026-10-17 12:40 (Brasília). (1) **Quadros reais** (raw da branch): resultados iguais aos de um
+  contador independente em Python, só com regex sobre o Markdown. `aulasenai`: 850 tarefas, 30
+  mães; por status 795 ⬜, 3 🔄, 20 ⛔, 2 👀; 2 reservas, 1 parada (`#171-…`, de 2026-10-14); 7
+  frentes ativas, 17 aguardando, 7 encerradas visíveis e 2 ocultas (> 24 h); nenhuma frente
+  derivada (as 2 reservas estão na tabela). `dashboard-ai`: 43 tarefas, 5 mães; 34 ⬜, 1 🔄, 3
+  👀; 1 reserva (`SUB-62.3`, Qoder) parada, numa frente derivada `local · main`. Totais: 3
+  reservas e 2 paradas. (2) **Quadros sintéticos com horas controladas** (36 conferências no
+  total): frente encerrada há 30 h oculta e contada; há 12 h visível; reserva de 30 h não é parada
+  se a frente da tabela foi atualizada há 1 h; derivada junta 2 reservas e dá a data da mais
+  recente; reserva sem `(desde` nunca é parada; ignora mãe, ✅, livre e pendente; ordem das
+  frentes; `urlEtapa`; quadro sem frentes; nível pelo título; erro sem texto não lança; limite
+  de 24 h exato não é parada e 24 h e 1 min é. (3) Limites: `node --check`, funções de 3 a 29
+  linhas, JSDoc em todas, linhas ≤ 100 caracteres, sem DOM, Three.js nem rede.
 
 ### #2.7 — Cena 3D
 
