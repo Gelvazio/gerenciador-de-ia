@@ -13,6 +13,15 @@ const REGEX_DATA_HORA = /(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/;
 const TEXTO_MENOS_DE_UM_MINUTO = "menos de 1 min";
 
 /**
+ * Completa um número com zero à esquerda até ter dois dígitos.
+ * @param {number} numero Número a formatar.
+ * @returns {string} Número com dois dígitos (ex.: 7 vira "07").
+ */
+function doisDigitos(numero) {
+  return String(numero).padStart(2, "0");
+}
+
+/**
  * Lê o primeiro `AAAA-MM-DD HH:MM` de um texto como horário de Brasília.
  * @param {string} texto Texto que contém a data (ex.: "(desde 2026-10-16 21:48)").
  * @returns {Date|null} Instante correspondente, ou null se não houver data com hora válida.
@@ -61,6 +70,17 @@ export function haQuantoTempo(desde, agora = Date.now()) {
  */
 export function formatarHoraBrasilia(data) {
   const emBrasilia = new Date(data.getTime() + DESLOCAMENTO_BRASILIA_MS);
-  const dois = (numero) => String(numero).padStart(2, "0");
-  return `${dois(emBrasilia.getUTCHours())}:${dois(emBrasilia.getUTCMinutes())}`;
+  return `${doisDigitos(emBrasilia.getUTCHours())}:${doisDigitos(emBrasilia.getUTCMinutes())}`;
+}
+
+/**
+ * Formata um instante como "DD/MM HH:MM" no horário de Brasília.
+ * @param {Date} data Instante a formatar.
+ * @returns {string} Dia, mês, hora e minuto, com dois dígitos cada (ex.: "17/10 12:14").
+ */
+export function formatarDataHoraBrasilia(data) {
+  const emBrasilia = new Date(data.getTime() + DESLOCAMENTO_BRASILIA_MS);
+  const dia = doisDigitos(emBrasilia.getUTCDate());
+  const mes = doisDigitos(emBrasilia.getUTCMonth() + 1);
+  return `${dia}/${mes} ${formatarHoraBrasilia(data)}`;
 }

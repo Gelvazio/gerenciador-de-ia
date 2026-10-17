@@ -278,7 +278,8 @@ e a #2.7 (cena) só espera as outras subtarefas listadas nas dependências dela.
 
 ### #2.8 — Painel 2D
 
-**Próximo passo:** plano aprovado (2026-10-17 11:42); pegar quando as dependências estiverem ✅, só pelo modelo da linha `Modelo`.
+**Próximo passo:** ✅ Concluída (2026-10-17 12:42). Nada a fazer; a #2.9 chama `atualizarPainel`
+a cada leitura (e guarda `ultimaLeituraBoa`, ver a Entrega).
 
 - **Nível:** MEDIO — tela em 1 arquivo.
 - **Modelo:** só Sonnet — nunca outro.
@@ -286,7 +287,39 @@ e a #2.7 (cena) só espera as outras subtarefas listadas nas dependências dela.
   commit, hora da última leitura, aviso "fonte X sem atualização desde HH:MM" e legenda das cores.
 - **Critérios de aceitação:** só monta HTML com classes de `painel.css` (sem `style=""`);
   `node --check` passa.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit de fechamento da #2.8 (`git log --grep="#2.8"`): `assets/js/tela/painel.js` e
+  `formatarDataHoraBrasilia` em `assets/js/utilitarios/tempo.js` (acréscimo; o resto do arquivo
+  não mudou). **Contrato para a #2.9:** `atualizarPainel(modelo, opcoes, documento?)`, com
+  `modelo` = saída de `montarModelo` e `opcoes = { ultimaLeituraBoa, avisosExtras }`:
+  `ultimaLeituraBoa` é um objeto `{ "dono/repo": Date }` com a última leitura bem-sucedida de cada
+  fonte (a #2.9 guarda; o modelo não tem esse dado) e vira o "sem atualização desde HH:MM";
+  `avisosExtras` é uma lista de textos (ex.: limite da API quase no fim, intervalo dobrado). Também
+  exporta `descreverPainel(modelo, opcoes)` (pura, devolve `{ leitura, fontes, avisos, legenda }`),
+  `renderizarPainel(descricao, documento?)` e `LEGENDA`. Escreve nos ids `painel-leitura`,
+  `painel-lista-fontes`, `painel-avisos` e `painel-lista-legenda` e **lança erro claro** se algum
+  não existir na página. **O que mostra:** "Última leitura às HH:MM · a cada N min · X reservas
+  (Y paradas) · Z frentes aguardando você"; por fonte, o último commit (`DD/MM HH:MM (sha)`) e os
+  números (pendentes, em execução, aguardando você, bloqueadas, concluídas, só os que existem, mais
+  reservas); avisos vermelhos de erro de leitura (rede, HTTP, limite) e âmbar de reserva parada;
+  legenda de 7 cores. Tudo por `textContent`, nunca `innerHTML`.
+- **Verificação:** módulos copiados para a pasta temporária da sessão (mesma estrutura de pastas,
+  `"type": "module"`) e rodados com `node`, hora fixada em 12:40 de Brasília, com um **DOM falso**
+  (a IA não abre navegador), os ids do `index.html` real e as classes do `painel.css` real.
+  **31 conferências**, entre elas: com os quadros reais, o texto da leitura, os números por fonte
+  e os avisos batem com um contador independente em Python (agora `aulasenai` 855 tarefas, 798
+  pendentes, 4 em execução, 3 reservas, 16 frentes aguardando; `dashboard-ai` 43, 34 pendentes, 1
+  reserva); "sem atualização desde 12:30" com leitura boa anterior e "ainda sem leitura" sem ela;
+  erros de rede, HTTP 404 e limite; aviso extra do chamador; singular ("1 pendente", "1 reserva");
+  quadro lido sem API; redesenhar troca o conteúdo sem acumular; um nome com HTML
+  (`<img onerror>`) fica como texto literal; toda classe que o painel usa existe no `painel.css`;
+  nenhum atributo `style`; elemento ausente lança erro claro; o código (sem comentários) não usa
+  `innerHTML`, `.style`, rede nem palavra de IA. `tempo.js`: os 5 comportamentos antigos (#2.3)
+  continuam iguais, e `formatarDataHoraBrasilia` acerta a virada de dia e de ano (UTC-3). Limites:
+  `node --check`, funções de 3 a 31 linhas, JSDoc em todas, linhas ≤ 100 caracteres. **Conferir
+  na tela:** posição e aparência do painel.
+  **Achado no caminho:** na 1ª rodada 3 conferências falharam, todas por erro do **teste** (números
+  fixos de uma leitura anterior dos quadros reais e a palavra `innerHTML` num comentário); o painel
+  estava certo. Troquei os números fixos por valores calculados pelo Python.
 
 ### #2.9 — Integração (`principal.js`)
 

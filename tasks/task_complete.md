@@ -15,3 +15,4 @@
 | #4.1 | Regra "Sem token de IA" no `CLAUDE.md` · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ✅ Concluída (2026-10-17 15:34) | — | [004-7017f12c](etapas/ETAPA-004-7017f12c-SEM-TOKEN-DE-IA.md) |
 | **#4-7017f12c-053b-4384-9bab-0cd67585e900** | **O visualizador nunca consome token de IA (regra do projeto)** | 🟡 Média | — | — | ✅ Concluída (2026-10-17 15:34) | — | [004-7017f12c](etapas/ETAPA-004-7017f12c-SEM-TOKEN-DE-IA.md) |
 | #2.6 | Modelo do quadro (projetos → frentes → reservas) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.4 | ✅ Concluída (2026-10-17 12:36) | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
+| #2.8 | Painel 2D · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.2, #2.6 | ✅ Concluída (2026-10-17 12:42) | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
