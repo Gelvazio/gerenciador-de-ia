@@ -9,15 +9,13 @@ quadros do `aulasenai` e do `dashboard-ai`: qual tarefa, por quem e há quanto t
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| Claude Code (Opus 5.5) (local · main) | #1.2 ([001-19603a75](etapas/ETAPA-001-19603a75-VISUALIZADOR-DE-TASKS.md)): escrever o `CLAUDE.md` do visualizador | 🔄 Em execução | 2026-10-17 11:22 |
+| Claude Code (Opus 5.5) (local · main) | #1.2 e #1 ([001-19603a75](etapas/ETAPA-001-19603a75-VISUALIZADOR-DE-TASKS.md)) concluídas: `CLAUDE.md` do visualizador | ⏹️ Encerrada | 2026-10-17 11:30 |
 | Claude Code (Haiku 5.5) (local · main) | #1.1 ([001-19603a75](etapas/ETAPA-001-19603a75-VISUALIZADOR-DE-TASKS.md)) concluída: regras do quadro copiadas | ⏹️ Encerrada | 2026-10-17 11:21 |
 
 ## 📌 Tarefas
 
 | Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa |
 |---|---|---|---|---|---|---|---|
-| **#1-19603a75-4695-407e-a0ee-cb9bbd781ca0** | **`CLAUDE.md` do visualizador de tasks em 3D (Three.js), quase em tempo real** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [001-19603a75](etapas/ETAPA-001-19603a75-VISUALIZADOR-DE-TASKS.md) |
-| #1.2 | Escrever o `CLAUDE.md` do visualizador (Three.js, leitura dos quadros pelo GitHub) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #1.1 ✅ | 🔄 Em execução | Claude Code (Opus 5.5) (local · main) (desde 2026-10-17 11:22) | [001-19603a75](etapas/ETAPA-001-19603a75-VISUALIZADOR-DE-TASKS.md) |
 
 ## Escopo do projeto
 
@@ -47,6 +45,7 @@ Página estática que lê o `tasks/STATUS.md` dos repositórios públicos `Gelva
 | 2026-10-17 11:18 | Quadro próprio neste repositório (não no `aulasenai` nem no `rules-ai`) | Gelvazio | "QUADRO NOVO PRA ESTE REPO" |
 | 2026-10-17 11:18 | O visualizador usa a biblioteca Three.js | Gelvazio | "DEVE USAR A BIBLIOTECA Three.js" |
 | 2026-10-17 11:20 | Execução liberada: Haiku pega a #1.1 (LEVE); a #1.2 (PESADO) segue para Opus 5.5+ ou Fable | Gelvazio | "faça a tarefa pendente" |
+| 2026-10-17 11:25 | Leitura dos quadros: API do GitHub (último commit, `304` gratuito) + raw pelo SHA, a cada 60 s; publicação por GitHub Pages | Claude Code (Opus 5.5) | Raw por branch fica 5 min em cache; detalhes na etapa 001 |
 
 ## Pendências (ficou para depois)
 

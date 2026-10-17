@@ -35,7 +35,7 @@ visualizador 3D (Three.js) que mostra, quase em tempo real, qual tarefa está se
 
 ### #1.2 — Escrever o `CLAUDE.md` do visualizador
 
-**Próximo passo:** liberada: a #1.1 está ✅. Quem pega é o Opus 5.5+ ou Fable (PESADO), não o Haiku.
+**Próximo passo:** ✅ Concluída (2026-10-17 11:30). Nada a fazer; a mãe #1 também fecha.
 
 - **Nível:** PESADO — define a arquitetura do projeto novo.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro.
@@ -47,4 +47,19 @@ visualizador 3D (Three.js) que mostra, quase em tempo real, qual tarefa está se
   regras de git e do quadro deste repositório.
 - **Critérios de aceitação:** `CLAUDE.md` na raiz cobrindo todos os itens da descrição; Three.js
   como biblioteca de 3D; sem token na página; aponta para `.claude/rules/tasks/`.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit de fechamento da #1.2 (`git log --grep="#1.2"`): `CLAUDE.md` na raiz com
+  propósito, fontes e leitura (§2), formato das tabelas e de "Em uso por" (§3), cena Three.js
+  (§4), pastas (§5), validação sem navegador (§6), git (§7) e quadro + níveis (§8).
+- **Verificação:** os quadros foram lidos pelo GitHub em 2026-10-17 11:23: `200` sem token nas
+  duas fontes; o raw tem `Cache-Control: max-age=300` e a API `commits?path=` respondeu `304`
+  com `If-None-Match`, sem gastar o limite (55 de 60 restantes). O `three@0.170.0` (módulo,
+  `OrbitControls` e `CSS2DRenderer`) responde `200` no jsDelivr. Nenhuma linha fora de tabela
+  passa de 100 caracteres.
+
+#### Decisões (#1.2)
+
+| Data | Decisão | Quem | Por quê |
+|---|---|---|---|
+| 2026-10-17 11:25 | Ler o último commit pela API (`ETag`/`304`) e o conteúdo pelo raw com o SHA | Claude Code (Opus 5.5) | O raw por branch fica até 5 min em cache; com o SHA o atraso cai para ~60 s sem token |
+| 2026-10-17 11:25 | Colunas lidas pelo nome, não pela posição | Claude Code (Opus 5.5) | O `dashboard-ai` não tem `Modelo`, `Verificado` nem "🧭 Frentes" |
+| 2026-10-17 11:25 | ES modules sem bundler, publicação por GitHub Pages | Claude Code (Opus 5.5) | Página estática; `file://` não carrega módulos |
