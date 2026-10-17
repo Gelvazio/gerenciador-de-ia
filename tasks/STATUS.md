@@ -10,6 +10,7 @@ quadros do `aulasenai` e do `dashboard-ai`: qual tarefa, por quem e há quanto t
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
 | Claude Code (Opus 5.5) (local · main) | #2 aprovada ([002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md)); sem subtarefa livre do Opus (#2.7 e #2.9 aguardam dependências) | ⏹️ Encerrada | 2026-10-17 11:42 |
+| Claude Code (Sonnet 5.5) (local · main) | #3 publicada ([003-c61319f5](etapas/ETAPA-003-c61319f5-GATILHO-PONTO-E-VIRGULA.md)); a #3.1 é LEVE (só Haiku), então esta frente não a executa | ⏹️ Encerrada | 2026-10-17 11:57 |
 | Claude Code (Haiku 5.5) (local · main) | #2.1 ([002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md)) concluída: configuração de fontes e cores | ⏹️ Encerrada | 2026-10-17 11:47 |
 
 ## 📌 Tarefas
@@ -26,6 +27,8 @@ quadros do `aulasenai` e do `dashboard-ai`: qual tarefa, por quem e há quanto t
 | #2.8 | Painel 2D · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.2, #2.6 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.9 | Integração (`principal.js`) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #2.5, #2.7, #2.8 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.10 | `README.md` e conferência na tela · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #2.9 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
+| **#3-c61319f5-f7c7-4adc-8883-edf33ebe16f8** | **Gatilho `;` = pegue a próxima tarefa do seu modelo (regra do projeto)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [003-c61319f5](etapas/ETAPA-003-c61319f5-GATILHO-PONTO-E-VIRGULA.md) |
+| #3.1 | Regra do gatilho `;` em `frentes-e-reserva.md` e no `CLAUDE.md` · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ⬜ Pendente | — | [003-c61319f5](etapas/ETAPA-003-c61319f5-GATILHO-PONTO-E-VIRGULA.md) |
 
 ## Escopo do projeto
 
@@ -38,6 +41,7 @@ Página estática que lê o `tasks/STATUS.md` dos repositórios públicos `Gelva
 |---|---|---|
 | 001-19603a75 | `CLAUDE.md` do visualizador de tasks em 3D (#1, pedida em 2026-10-17 11:10) | [ETAPA-001-19603a75-VISUALIZADOR-DE-TASKS.md](etapas/ETAPA-001-19603a75-VISUALIZADOR-DE-TASKS.md) |
 | 002-17afd6cb | Construir o visualizador 3D de tasks, projeto todo (#2, pedida em 2026-10-17 11:29) | [ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
+| 003-c61319f5 | Gatilho `;` = pegue a próxima tarefa do seu modelo (#3, pedida em 2026-10-17 11:53) | [ETAPA-003-c61319f5-GATILHO-PONTO-E-VIRGULA.md](etapas/ETAPA-003-c61319f5-GATILHO-PONTO-E-VIRGULA.md) |
 
 ## Riscos
 
@@ -57,6 +61,7 @@ Página estática que lê o `tasks/STATUS.md` dos repositórios públicos `Gelva
 | 2026-10-17 11:18 | O visualizador usa a biblioteca Three.js | Gelvazio | "DEVE USAR A BIBLIOTECA Three.js" |
 | 2026-10-17 11:20 | Execução liberada: Haiku pega a #1.1 (LEVE); a #1.2 (PESADO) segue para Opus 5.5+ ou Fable | Gelvazio | "faça a tarefa pendente" |
 | 2026-10-17 11:25 | Leitura dos quadros: API do GitHub (último commit, `304` gratuito) + raw pelo SHA, a cada 60 s; publicação por GitHub Pages | Claude Code (Opus 5.5) | Raw por branch fica 5 min em cache; detalhes na etapa 001 |
+| 2026-10-17 11:53 | Gatilho `;` (pegar a próxima tarefa do seu modelo) vira regra deste projeto, igual à global C24 do `rules-ai` | Gelvazio | "este ;, é um gatilho pra *Pegue a proxima tarefa disponivel para seu modelo*, anote esta regra em rules-ai, global e aqui no projeto tambem" |
 | 2026-10-17 11:42 | Plano da #2 aprovado; execução liberada para todas as subtarefas, cada uma pelo seu modelo | Gelvazio | "execute a tarefa 2" |
 
 ## Pendências (ficou para depois)
