@@ -39,10 +39,11 @@ feita, por quem e há quanto tempo.
 | Data | Decisão | Quem | Por quê |
 |---|---|---|---|
 | 2026-10-17 11:29 | Prioridade 🟡 Média (a mesma da #1) | Claude Code (Opus 5.5) | O pedido não definiu; o usuário pode mudar |
+| 2026-10-17 11:42 | Plano aprovado: execução liberada para todas as subtarefas | Gelvazio | "execute a tarefa 2" |
 
 ### #2.1 — Configuração: fontes e cores
 
-**Próximo passo:** aguardar a aprovação do plano.
+**Próximo passo:** plano aprovado (2026-10-17 11:42); pegar quando as dependências estiverem ✅, só pelo modelo da linha `Modelo`.
 
 - **Nível:** LEVE — só constantes, sem lógica.
 - **Modelo:** só Haiku — nunca outro.
@@ -55,7 +56,7 @@ feita, por quem e há quanto tempo.
 
 ### #2.2 — Página: HTML, import map e CSS
 
-**Próximo passo:** aguardar a aprovação do plano.
+**Próximo passo:** plano aprovado (2026-10-17 11:42); pegar quando as dependências estiverem ✅, só pelo modelo da linha `Modelo`.
 
 - **Nível:** MEDIO — estrutura de página em 3 arquivos.
 - **Modelo:** só Sonnet — nunca outro.
@@ -68,7 +69,7 @@ feita, por quem e há quanto tempo.
 
 ### #2.3 — Leitor de tabela Markdown e utilitário de tempo
 
-**Próximo passo:** aguardar a aprovação do plano.
+**Próximo passo:** plano aprovado (2026-10-17 11:42); pegar quando as dependências estiverem ✅, só pelo modelo da linha `Modelo`.
 
 - **Nível:** MEDIO — lógica em 2 arquivos.
 - **Modelo:** só Sonnet — nunca outro.
@@ -81,7 +82,7 @@ feita, por quem e há quanto tempo.
 
 ### #2.4 — Leitores de reserva e do quadro
 
-**Próximo passo:** aguardar a aprovação do plano.
+**Próximo passo:** plano aprovado (2026-10-17 11:42); pegar quando as dependências estiverem ✅, só pelo modelo da linha `Modelo`.
 
 - **Nível:** MEDIO — lógica em 2 arquivos.
 - **Modelo:** só Sonnet — nunca outro.
@@ -95,7 +96,7 @@ feita, por quem e há quanto tempo.
 
 ### #2.5 — Cliente do GitHub
 
-**Próximo passo:** aguardar a aprovação do plano.
+**Próximo passo:** plano aprovado (2026-10-17 11:42); pegar quando as dependências estiverem ✅, só pelo modelo da linha `Modelo`.
 
 - **Nível:** MEDIO — lógica de rede em 1 arquivo.
 - **Modelo:** só Sonnet — nunca outro.
@@ -109,7 +110,7 @@ feita, por quem e há quanto tempo.
 
 ### #2.6 — Modelo do quadro
 
-**Próximo passo:** aguardar a aprovação do plano.
+**Próximo passo:** plano aprovado (2026-10-17 11:42); pegar quando as dependências estiverem ✅, só pelo modelo da linha `Modelo`.
 
 - **Nível:** MEDIO — regra em 1 arquivo.
 - **Modelo:** só Sonnet — nunca outro.
@@ -122,7 +123,7 @@ feita, por quem e há quanto tempo.
 
 ### #2.7 — Cena 3D
 
-**Próximo passo:** aguardar a aprovação do plano.
+**Próximo passo:** plano aprovado (2026-10-17 11:42); pegar quando as dependências estiverem ✅, só pelo modelo da linha `Modelo`.
 
 - **Nível:** PESADO — cena inteira, 5 arquivos ligados.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro.
@@ -137,7 +138,7 @@ feita, por quem e há quanto tempo.
 
 ### #2.8 — Painel 2D
 
-**Próximo passo:** aguardar a aprovação do plano.
+**Próximo passo:** plano aprovado (2026-10-17 11:42); pegar quando as dependências estiverem ✅, só pelo modelo da linha `Modelo`.
 
 - **Nível:** MEDIO — tela em 1 arquivo.
 - **Modelo:** só Sonnet — nunca outro.
@@ -149,7 +150,7 @@ feita, por quem e há quanto tempo.
 
 ### #2.9 — Integração (`principal.js`)
 
-**Próximo passo:** aguardar a aprovação do plano.
+**Próximo passo:** plano aprovado (2026-10-17 11:42); pegar quando as dependências estiverem ✅, só pelo modelo da linha `Modelo`.
 
 - **Nível:** PESADO — liga leitura, modelo, cena e painel (mais de 3 arquivos ligados).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro.
@@ -162,7 +163,7 @@ feita, por quem e há quanto tempo.
 
 ### #2.10 — `README.md` e conferência na tela
 
-**Próximo passo:** aguardar a aprovação do plano.
+**Próximo passo:** plano aprovado (2026-10-17 11:42); pegar quando as dependências estiverem ✅, só pelo modelo da linha `Modelo`.
 
 - **Nível:** LEVE — só `.md`.
 - **Modelo:** só Haiku — nunca outro.
