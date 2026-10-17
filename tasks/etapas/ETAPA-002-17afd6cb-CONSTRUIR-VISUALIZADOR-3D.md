@@ -370,7 +370,9 @@ a cada leitura (e guarda `ultimaLeituraBoa`, ver a Entrega).
 
 ### #2.9 — Integração (`principal.js`)
 
-**Próximo passo:** plano aprovado (2026-10-17 11:42); pegar quando as dependências estiverem ✅, só pelo modelo da linha `Modelo`.
+**Próximo passo:** ✅ Concluída (2026-10-17 13:43). Nada a fazer; a #2.10 já pode ser pega. O
+intervalo de leitura continua o de `INTERVALO_LEITURA_MS` (60 s) até o usuário escolher (Pendências
+do `STATUS.md`): trocar é 1 linha em `config/fontes.js`, sem mexer no `principal.js`.
 
 - **Nível:** PESADO — liga leitura, modelo, cena e painel (mais de 3 arquivos ligados).
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro.
@@ -379,7 +381,33 @@ a cada leitura (e guarda `ultimaLeituraBoa`, ver a Entrega).
   a cada segundo sem nova leitura; falha mantém a última cena.
 - **Critérios de aceitação:** `node --check` em **todos** os `.js`; nenhum token; limites de
   código conferidos em todos os arquivos.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit de fechamento da #2.9 (`git log --grep="#2.9"`): `assets/js/principal.js`
+  (1 arquivo novo). Classe `Visualizador({ cliente, cena, documento })` (partes injetadas) e a
+  inicialização no fim do arquivo. **Ciclo:** lê as fontes juntas (`Promise.all`) a cada
+  `cliente.intervaloSugeridoMs(INTERVALO_LEITURA_MS)` (dobra com o limite no fim); uma leitura
+  por vez (pedido durante outra é ignorado); aba escondida cancela a próxima leitura e para o
+  contador, e ao voltar lê na hora. **Entrega:** `montarModelo` → `cena.atualizar` (por
+  diferença) → `atualizarPainel` com `ultimaLeituraBoa` (hora da última leitura sem erro, por
+  fonte) e `avisosExtras` (limite quase no fim, com o intervalo e a hora do reset; limite esgotado
+  → "lendo pela branch, até 5 min de atraso"). **Falhas:** o cliente devolve o último estado bom,
+  então a cena não apaga; erro ao desenhar vai para o `console` e o ciclo segue; sem WebGL a
+  cena fica `null`, a página segue só com o painel e mostra o aviso.
+- **Verificação:** cópia dos módulos na pasta temporária da sessão (`"type": "module"`), com DOM
+  falso e a cena trocada por um registro (o `three` não existe fora do navegador). (1) **Leitura
+  real** do GitHub, sem token: `aulasenai` 31 frentes e 2 reservas, `dashboard-ai` 1 e 1, com
+  SHA; painel "Última leitura às 13:40 · a cada 1 min · 3 reservas (2 paradas) · 17 frentes
+  aguardando você" e os 2 avisos de reserva parada; contador a cada 1000 ms chama a cena;
+  próxima leitura agendada em 60000 ms; aba escondida cancela a leitura e para o contador; ao
+  voltar lê na hora, e 2 avisos seguidos de "visível" dão 1 leitura só; 2ª leitura (`304`) sem
+  erro. (2) **Cliente com `fetch` falso:** 5 restantes → próxima leitura em 120000 ms e aviso
+  "leitura a cada 2 min até HH:MM"; rede caindo → as tarefas da leitura anterior continuam no
+  modelo, aviso "sem atualização desde HH:MM (falha de rede)" e a leitura segue agendada; limite
+  zerado → aviso de leitura pela branch; painel que lança erro → o ciclo continua agendado; sem
+  cena → aviso de WebGL. (3) `node --check` nos **17** `.js`; nenhuma linha acima de 100
+  caracteres em nenhum arquivo (contado por caractere); maior função do `principal.js` 14
+  linhas; até 1 parâmetro; JSDoc em todas; o grep de IA do `CLAUDE.md` §6 não acha nada; hosts:
+  `api.github.com`, `raw.githubusercontent.com`, `cdn.jsdelivr.net` e `github.com` (só o link
+  da etapa no clique, já existente). **Conferir na tela** na #2.10.
 
 ### #2.10 — `README.md` e conferência na tela
 
