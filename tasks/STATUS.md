@@ -9,13 +9,24 @@ quadros do `aulasenai` e do `dashboard-ai`: qual tarefa, por quem e há quanto t
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| Claude Code (Opus 5.5) (local · main) | #1.2 e #1 ([001-19603a75](etapas/ETAPA-001-19603a75-VISUALIZADOR-DE-TASKS.md)) concluídas: `CLAUDE.md` do visualizador | ⏹️ Encerrada | 2026-10-17 11:30 |
+| Claude Code (Opus 5.5) (local · main) | #2 publicada ([002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md)); aguarda o "sim" do usuário ao plano | 👀 Aguardando o usuário | 2026-10-17 11:29 |
 | Claude Code (Haiku 5.5) (local · main) | #1.1 ([001-19603a75](etapas/ETAPA-001-19603a75-VISUALIZADOR-DE-TASKS.md)) concluída: regras do quadro copiadas | ⏹️ Encerrada | 2026-10-17 11:21 |
 
 ## 📌 Tarefas
 
 | Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa |
 |---|---|---|---|---|---|---|---|
+| **#2-17afd6cb-ac6a-4e06-89b5-d3279a747688** | **Construir o visualizador 3D de tasks (projeto todo, conforme o `CLAUDE.md`)** | 🟡 Média | — | — | 👀 Plano aguarda aprovação | — (não reservável) | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
+| #2.1 | Configuração: fontes e cores · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
+| #2.2 | Página: HTML, import map e CSS · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.1 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
+| #2.3 | Leitor de tabela Markdown e utilitário de tempo · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
+| #2.4 | Leitores de reserva e do quadro · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.3 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
+| #2.5 | Cliente do GitHub (API + raw pelo SHA) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.1 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
+| #2.6 | Modelo do quadro (projetos → frentes → reservas) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.4 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
+| #2.7 | Cena 3D (Three.js) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #2.1, #2.2, #2.6 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
+| #2.8 | Painel 2D · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.2, #2.6 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
+| #2.9 | Integração (`principal.js`) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #2.5, #2.7, #2.8 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
+| #2.10 | `README.md` e conferência na tela · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #2.9 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 
 ## Escopo do projeto
 
@@ -27,6 +38,7 @@ Página estática que lê o `tasks/STATUS.md` dos repositórios públicos `Gelva
 | Etapa | Assunto | Arquivo |
 |---|---|---|
 | 001-19603a75 | `CLAUDE.md` do visualizador de tasks em 3D (#1, pedida em 2026-10-17 11:10) | [ETAPA-001-19603a75-VISUALIZADOR-DE-TASKS.md](etapas/ETAPA-001-19603a75-VISUALIZADOR-DE-TASKS.md) |
+| 002-17afd6cb | Construir o visualizador 3D de tasks, projeto todo (#2, pedida em 2026-10-17 11:29) | [ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 
 ## Riscos
 

@@ -35,7 +35,7 @@ visualizador 3D (Three.js) que mostra, quase em tempo real, qual tarefa está se
 
 ### #1.2 — Escrever o `CLAUDE.md` do visualizador
 
-**Próximo passo:** ✅ Concluída (2026-10-17 11:30). Nada a fazer; a mãe #1 também fecha.
+**Próximo passo:** ✅ Concluída (2026-10-17 11:25). Nada a fazer; a mãe #1 também fecha.
 
 - **Nível:** PESADO — define a arquitetura do projeto novo.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro.
