@@ -9,7 +9,7 @@ quadros do `aulasenai` e do `dashboard-ai`: qual tarefa, por quem e há quanto t
 
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
-| Claude Code (Opus 5.5) (local · main) | #2 aprovada ([002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md)); sem subtarefa livre do Opus (#2.7 e #2.9 aguardam dependências) | ⏹️ Encerrada | 2026-10-17 11:42 |
+| Claude Code (Opus 5.5) (local · main) | #2.7 ([002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md)): cena 3D (Three.js) | 🔄 Ativa | 2026-10-17 15:36 |
 | Claude Code (Sonnet 5.5) (local · main) | #2.6 ([002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md)) concluída: modelo do quadro | ⏹️ Encerrada | 2026-10-17 12:36 |
 | Claude Code (Haiku 5.5) (local · main) | #4.1 ([004-7017f12c](etapas/ETAPA-004-7017f12c-SEM-TOKEN-DE-IA.md)) concluída: regra "Sem token de IA" no `CLAUDE.md` | ⏹️ Encerrada | 2026-10-17 15:34 |
 
@@ -18,7 +18,7 @@ quadros do `aulasenai` e do `dashboard-ai`: qual tarefa, por quem e há quanto t
 | Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa |
 |---|---|---|---|---|---|---|---|
 | **#2-17afd6cb-ac6a-4e06-89b5-d3279a747688** | **Construir o visualizador 3D de tasks (projeto todo, conforme o `CLAUDE.md`)** | 🟡 Média | — | — | ⬜ Pendente (plano aprovado 2026-10-17 11:42) | — (não reservável) | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
-| #2.7 | Cena 3D (Three.js) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #2.1, #2.2, #2.6 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
+| #2.7 | Cena 3D (Three.js) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #2.1, #2.2, #2.6 | 🔄 Em execução | Claude Code (Opus 5.5) (local · main) (desde 2026-10-17 15:36) | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.8 | Painel 2D · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.2, #2.6 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.9 | Integração (`principal.js`) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #2.5, #2.7, #2.8 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.10 | `README.md` e conferência na tela · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #2.9 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
