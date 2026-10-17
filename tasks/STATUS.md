@@ -10,7 +10,7 @@ quadros do `aulasenai` e do `dashboard-ai`: qual tarefa, por quem e há quanto t
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
 | Claude Code (Opus 5.5) (local · main) | #2 aprovada ([002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md)); sem subtarefa livre do Opus (#2.7 e #2.9 aguardam dependências) | ⏹️ Encerrada | 2026-10-17 11:42 |
-| Claude Code (Sonnet 5.5) (local · main) | #2.5 ([002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md)): cliente do GitHub | 🔄 Em execução | 2026-10-17 12:22 |
+| Claude Code (Sonnet 5.5) (local · main) | #2.5 ([002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md)) concluída: cliente do GitHub | ⏹️ Encerrada | 2026-10-17 12:30 |
 | Claude Code (Haiku 5.5) (local · main) | #3.1 ([003-c61319f5](etapas/ETAPA-003-c61319f5-GATILHO-PONTO-E-VIRGULA.md)) concluída: regra do gatilho `;` neste projeto | ⏹️ Encerrada | 2026-10-17 11:58 |
 
 ## 📌 Tarefas
@@ -18,7 +18,6 @@ quadros do `aulasenai` e do `dashboard-ai`: qual tarefa, por quem e há quanto t
 | Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa |
 |---|---|---|---|---|---|---|---|
 | **#2-17afd6cb-ac6a-4e06-89b5-d3279a747688** | **Construir o visualizador 3D de tasks (projeto todo, conforme o `CLAUDE.md`)** | 🟡 Média | — | — | ⬜ Pendente (plano aprovado 2026-10-17 11:42) | — (não reservável) | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
-| #2.5 | Cliente do GitHub (API + raw pelo SHA) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.1 ✅ | 🔄 Em execução | Claude Code (Sonnet 5.5) (local · main) (desde 2026-10-17 12:22) | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.6 | Modelo do quadro (projetos → frentes → reservas) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.4 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.7 | Cena 3D (Three.js) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #2.1, #2.2, #2.6 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.8 | Painel 2D · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.2, #2.6 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
@@ -59,11 +58,13 @@ Página estática que lê o `tasks/STATUS.md` dos repositórios públicos `Gelva
 | 2026-10-17 11:25 | Leitura dos quadros: API do GitHub (último commit, `304` gratuito) + raw pelo SHA, a cada 60 s; publicação por GitHub Pages | Claude Code (Opus 5.5) | Raw por branch fica 5 min em cache; detalhes na etapa 001 |
 | 2026-10-17 11:53 | Gatilho `;` (pegar a próxima tarefa do seu modelo) vira regra deste projeto, igual à global C24 do `rules-ai` | Gelvazio | "este ;, é um gatilho pra *Pegue a proxima tarefa disponivel para seu modelo*, anote esta regra em rules-ai, global e aqui no projeto tambem" |
 | 2026-10-17 11:42 | Plano da #2 aprovado; execução liberada para todas as subtarefas, cada uma pelo seu modelo | Gelvazio | "execute a tarefa 2" |
+| 2026-10-17 12:27 | **Correção da decisão de 11:25:** sem token, o `304` da API GASTA 1 requisição (conferido: 53 → 52 → 51). O resto da decisão vale; o intervalo de 60 s não cabe no limite com 2 fontes (ver Pendências) | Claude Code (Sonnet 5.5) | Teste real na #2.5 |
 
 ## Pendências (ficou para depois)
 
 | Data | Pendência | Motivo |
 |---|---|---|
+| 2026-10-17 | **Definir o intervalo de leitura da API.** 2 fontes a cada 60 s = 120 requisições por hora, e o limite sem token é 60 por IP: o limite acaba em cerca de 25 min e a leitura cai para o raw pela branch (até 5 min de atraso). Opções: (1) 150 s por fonte (48 por hora, sobra margem); (2) só raw pela branch, sempre com até 5 min de atraso e sem gastar a cota; (3) usar token, o que o `CLAUDE.md` proíbe na página | Depende do usuário (atraso × limite). O cliente já funciona nos dois casos; a #2.9 aplica o intervalo escolhido |
 
 ## Lições aprendidas
 

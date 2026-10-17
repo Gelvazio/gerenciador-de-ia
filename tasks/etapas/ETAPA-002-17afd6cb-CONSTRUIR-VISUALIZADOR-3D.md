@@ -29,7 +29,7 @@ feita, por quem e há quanto tempo.
 
 | Risco | Plano B |
 |---|---|
-| Limite de 60 requisições/h da API sem token (vários navegadores no mesmo IP) | `304` não gasta; com `X-RateLimit-Remaining` < 10, dobrar o intervalo; se zerar, cair para o raw por branch (atraso de até 5 min) até `X-RateLimit-Reset` |
+| Limite de 60 requisições/h da API sem token (vários navegadores no mesmo IP) | **corrigido em 2026-10-17 (#2.5):** o `304` GASTA 1 requisição; com 2 fontes a cada 60 s são 120/h. Com `X-RateLimit-Remaining` < 10, dobrar o intervalo; se zerar, cair para o raw por branch (atraso de até 5 min) até `X-RateLimit-Reset`. Intervalo definitivo: pendente do usuário (`STATUS.md`) |
 | `aulasenai/tasks/STATUS.md` grande (~340 KB) e com dezenas de frentes | baixar só quando o SHA muda; mostrar só frentes ativas, 👀 e encerradas nas últimas 24 h |
 | Formato de "Em uso por" fora dos 3 conhecidos | cair para "frente = texto inteiro" e contar no painel como "reserva sem formato" |
 | Cena e cores só conferíveis na tela (a IA não abre navegador) | usuário confere na #2.10 (👀); ajustes viram tarefa nova |
@@ -175,7 +175,8 @@ só da #2.4) e usa as funções listadas na Entrega.
 
 ### #2.5 — Cliente do GitHub
 
-**Próximo passo:** plano aprovado (2026-10-17 11:42); pegar quando as dependências estiverem ✅, só pelo modelo da linha `Modelo`.
+**Próximo passo:** ✅ Concluída (2026-10-17 12:30). A #2.9 aplica o intervalo de leitura; a escolha
+dele está nas Pendências do `STATUS.md` (depende do usuário).
 
 - **Nível:** MEDIO — lógica de rede em 1 arquivo.
 - **Modelo:** só Sonnet — nunca outro.
@@ -185,7 +186,33 @@ só da #2.4) e usa as funções listadas na Entrega.
   erro tratado. `fetch` injetado (SOLID: D). Sem token.
 - **Critérios de aceitação:** URLs e intervalos em constantes; `node --check` passa; uma leitura
   real com `node` traz o SHA e o texto das 2 fontes.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit de fechamento da #2.5 (`git log --grep="#2.5"`): `assets/js/dados/cliente-github.js`.
+  Uso: `const cliente = new ClienteGithub({ buscar, agora })` (os dois são opcionais: padrão é o
+  `fetch` global e `Date.now`); `await cliente.lerFonte({ dono, repositorio })` devolve
+  `{ situacao, fonte, sha, data, texto, via, erro, lidoEm }`. `situacao`: `novo`, `sem-mudanca`
+  ou `erro`; `via`: `api` ou `raw-branch` (plano B com o limite esgotado, sem SHA);
+  `erro`: `{ tipo: rede|http|limite, status, mensagem }`, e nesse caso `sha`, `data` e `texto`
+  trazem o **último estado bom**, para a cena não apagar. `lerFonte` nunca lança.
+  `cliente.intervaloSugeridoMs(baseMs)` dobra o intervalo quando restam menos de 10 requisições
+  até o reset; `cliente.limiteEsgotado()` e `cliente.limite` mostram o estado. Exporta também
+  `urlUltimoCommit`, `urlRaw`, `lerLimite`, `SITUACAO_LEITURA`, `TIPO_ERRO` e `VIA_LEITURA`.
+  A leitura do `If-None-Match` por navegador foi conferida: o preflight de CORS da API aceita
+  esse cabeçalho (`access-control-allow-headers` o lista).
+- **Verificação:** (1) **Leitura real** com `node` e o `fetch` global, sem token: `aulasenai`
+  (328.420 caracteres, commit de 15:14Z) e `dashboard-ai` (23.705 caracteres) vieram com `novo`,
+  SHA de 40 hexadecimais e data; a 2ª leitura veio `304` nas duas (`sem-mudanca`, mesmo SHA e
+  texto); o texto baixado, passado ao `lerQuadro`, deu 850 e 43 tarefas; uma fonte inexistente
+  voltou como erro `http` 404, sem exceção. (2) **27 conferências com `fetch` falso**: 1ª
+  leitura, 304 com `If-None-Match`, SHA novo, mesmo SHA com outro ETag, fontes independentes,
+  intervalo dobra com 9 restantes e não com 10, volta ao normal após o reset, limite 0 → raw
+  pela branch e volta à API depois do reset, 403 com 0 restantes (limite) × 403 com 40 (http),
+  429, 404, falha de rede, e raw que falha sem gravar estado. (3) `node --check`, funções de 3 a
+  24 linhas, JSDoc em todas, linhas ≤ 100 caracteres. **Achado (corrigido nos textos):** o teste
+  real mostrou que o `304` **gasta 1 requisição** (58 → 56; depois 53 → 52 → 51 isolado),
+  contra o que o `CLAUDE.md` §2 dizia. Corrigi o `CLAUDE.md`, o cabeçalho do cliente e a tabela
+  de riscos desta etapa, e registrei a correção nas Decisões e a escolha do intervalo nas
+  Pendências do `STATUS.md`: 2 fontes a cada 60 s dão 120 requisições por hora, acima das 60.
+  O cliente funciona nos dois casos; falta o usuário escolher o intervalo.
 
 ### #2.6 — Modelo do quadro
 

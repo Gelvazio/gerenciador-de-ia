@@ -10,3 +10,4 @@
 | #2.2 | Página: HTML, import map e CSS · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.1 | ✅ Concluída (2026-10-17 12:01) | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.3 | Leitor de tabela Markdown e utilitário de tempo · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ✅ Concluída (2026-10-17 12:12) | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.4 | Leitores de reserva e do quadro · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.3 | ✅ Concluída (2026-10-17 12:17) | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
+| #2.5 | Cliente do GitHub (API + raw pelo SHA) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.1 | ✅ Concluída (2026-10-17 12:30) | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |

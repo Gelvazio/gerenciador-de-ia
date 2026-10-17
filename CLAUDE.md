@@ -34,7 +34,8 @@ max-age=300`). Por isso a leitura é feita em dois passos:
 
 1. **Último commit do quadro** (a cada **60 s** por fonte):
    `GET https://api.github.com/repos/<dono>/<repo>/commits?path=tasks/STATUS.md&sha=main&per_page=1`
-   com `If-None-Match: <ETag anterior>`. A resposta `304` não gasta o limite da API.
+   com `If-None-Match: <ETag anterior>`. Sem token, a resposta `304` **gasta 1 requisição**
+   como qualquer outra (conferido em 2026-10-17); ela só evita baixar o texto de novo.
 2. **Conteúdo, só quando o SHA mudou:**
    `GET https://raw.githubusercontent.com/<dono>/<repo>/<sha>/tasks/STATUS.md`. A URL com o SHA
    é única e não pega cópia velha do cache.
@@ -42,7 +43,7 @@ max-age=300`). Por isso a leitura é feita em dois passos:
 | Regra | Valor |
 |---|---|
 | Intervalo de leitura | 60 s por fonte (constante `INTERVALO_LEITURA_MS`) |
-| Limite da API sem token | 60 requisições por hora por IP. Com `X-RateLimit-Remaining` < 10, dobrar o intervalo até `X-RateLimit-Reset` |
+| Limite da API sem token | 60 requisições por hora por IP, e cada leitura (inclusive `304`) gasta 1. Com `X-RateLimit-Remaining` < 10, dobrar o intervalo até `X-RateLimit-Reset`; com 0, ler o raw pela branch (até 5 min de atraso) até o reset. **Atenção:** 2 fontes a cada 60 s são 120 requisições por hora, mais que o limite; o intervalo definitivo está pendente (`tasks/STATUS.md`, Pendências) |
 | Falha de rede ou `403`/`429` | manter a última cena, mostrar o aviso "fonte X sem atualização desde HH:MM" e tentar de novo no próximo ciclo |
 | Aba escondida (`document.hidden`) | pausar a leitura; ao voltar, ler na hora |
 
