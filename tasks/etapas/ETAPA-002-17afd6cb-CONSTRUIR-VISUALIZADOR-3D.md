@@ -99,7 +99,8 @@ classes listados na Entrega.
 
 ### #2.3 — Leitor de tabela Markdown e utilitário de tempo
 
-**Próximo passo:** plano aprovado (2026-10-17 11:42); pegar quando as dependências estiverem ✅, só pelo modelo da linha `Modelo`.
+**Próximo passo:** ✅ Concluída (2026-10-17 12:20). Nada a fazer; a #2.4 já pode ser pega e usa as
+funções listadas na Entrega.
 
 - **Nível:** MEDIO — lógica em 2 arquivos.
 - **Modelo:** só Sonnet — nunca outro.
@@ -108,7 +109,25 @@ classes listados na Entrega.
   `AAAA-MM-DD HH:MM` com fuso fixo `-03:00`; formata "há quanto tempo": `2 h 14 min`).
 - **Critérios de aceitação:** sem DOM e sem Three.js; rodando com `node` contra os 2 quadros reais,
   a tabela "📌 Tarefas" sai com o número de linhas certo.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit de fechamento da #2.3 (`git log --grep="#2.3"`). Funções exportadas:
+  - `leitor-tabela.js`: `lerTabelaDaSecao(markdown, titulo)` (atalho), `lerLinhasDaSecao`,
+    `lerTabela(linhas)` e `dividirCelulas(linha)`. O título é comparado pelo começo, sem emoji
+    (`"Tarefas"`, `"Frentes de trabalho"`). Cada linha vira um objeto `{ nomeDaColuna: texto }`;
+    coluna ausente fica `undefined` (nunca erro); célula faltando na linha fica `""`; seção
+    ou tabela inexistente devolve lista vazia.
+  - `tempo.js`: `lerDataHoraBrasilia(texto)` (primeiro `AAAA-MM-DD HH:MM`, fuso `-03:00`, `null`
+    se não houver hora), `formatarDuracao(ms)`, `haQuantoTempo(desde, agora?)` e
+    `formatarHoraBrasilia(data)` (`"HH:MM"`, usado pelo aviso "sem atualização desde HH:MM").
+- **Verificação:** módulos copiados como `.mjs` na pasta temporária da sessão (o repositório não é
+  `"type": "module"`) e rodados com `node` contra os quadros lidos agora do GitHub. "📌 Tarefas":
+  `aulasenai` 850 linhas, `dashboard-ai` 43 e o quadro deste projeto 10, todas iguais à contagem
+  independente por `awk`. Colunas lidas pelo nome nos três (incluindo `Verificado` e `Modelo`
+  só onde existem); "🧭 Frentes de trabalho" do `aulasenai` com 33 frentes e as 4 colunas certas;
+  no `dashboard-ai`, sem essa seção, devolve vazio sem erro. Barra escapada `\|` e linha curta
+  tratadas. `lerDataHoraBrasilia("(desde 2026-10-16 21:48)")` dá `2026-10-17T00:48:00Z`; 8 casos
+  de `formatarDuracao` (de "menos de 1 min" a "1 d 2 h") e `formatarHoraBrasilia` conferem.
+  Limites: nenhuma linha acima de 100 caracteres, funções de 3 a 17 linhas, até 2 parâmetros,
+  JSDoc em todas, sem DOM nem Three.js.
 
 ### #2.4 — Leitores de reserva e do quadro
 
