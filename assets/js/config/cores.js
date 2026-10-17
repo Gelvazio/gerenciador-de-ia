@@ -40,3 +40,43 @@ export const ALTURA_BLOCO = 1.2;
 
 /** Velocidade da pulsação da estação 👀, em ciclos por segundo. */
 export const FREQUENCIA_PULSACAO_HZ = 0.5;
+
+/** Fundo da cena (igual ao token `--cor-fundo` de base.css). */
+export const COR_FUNDO_CENA = 0x0b1220;
+
+/** Luz ambiente (céu e chão) e luz direcional da cena. */
+export const COR_LUZ_CEU = 0xdbeafe;
+export const COR_LUZ_CHAO = 0x1e293b;
+export const COR_LUZ_DIRECIONAL = 0xffffff;
+export const INTENSIDADE_LUZ_AMBIENTE = 1.4;
+export const INTENSIDADE_LUZ_DIRECIONAL = 1.6;
+
+/** Espessura da ilha, em unidades da cena. */
+export const ALTURA_ILHA = 0.6;
+
+/** Margem entre a borda da ilha e as estações, em unidades da cena. */
+export const MARGEM_ILHA = 1.2;
+
+/** Lado e altura da base da estação, em unidades da cena. */
+export const LADO_ESTACAO = 2;
+export const ALTURA_ESTACAO = 0.3;
+
+/** Distância entre os centros de duas estações vizinhas, em unidades da cena. */
+export const PASSO_ESTACAO = 3.4;
+
+/** Lado do bloco de tarefa e folga vertical entre blocos empilhados, em unidades da cena. */
+export const LADO_BLOCO = 1.2;
+export const FOLGA_BLOCO = 0.25;
+
+/** Contorno da reserva parada: quanto o casco vermelho é maior que o bloco. */
+export const ESCALA_CONTORNO_PARADA = 1.12;
+
+/** Brilho da estação 👀 que pulsa: mínimo e máximo da intensidade emissiva. */
+export const BRILHO_PULSACAO_MIN = 0.1;
+export const BRILHO_PULSACAO_MAX = 0.9;
+
+/** Câmera: campo de visão (graus), planos de corte e distância relativa ao tamanho da cena. */
+export const CAMPO_VISAO_GRAUS = 45;
+export const CORTE_PERTO = 0.1;
+export const CORTE_LONGE = 1000;
+export const FATOR_DISTANCIA_CAMERA = 1.1;

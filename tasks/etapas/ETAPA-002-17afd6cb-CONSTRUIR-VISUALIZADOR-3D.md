@@ -40,6 +40,7 @@ feita, por quem e há quanto tempo.
 |---|---|---|---|
 | 2026-10-17 11:29 | Prioridade 🟡 Média (a mesma da #1) | Claude Code (Opus 5.5) | O pedido não definiu; o usuário pode mudar |
 | 2026-10-17 11:42 | Plano aprovado: execução liberada para todas as subtarefas | Gelvazio | "execute a tarefa 2" |
+| 2026-10-17 15:42 | Na #2.7, 2 arquivos a mais em `cena/`: `cena-tarefas.js` (o conteúdo da cena, separado da base) e `diferenca.js` (a diferença dos 3 níveis); árvore do `CLAUDE.md` §5 atualizada | Claude Code (Opus 5.5) | SOLID: a base (renderer) não conhece tarefas, e a diferença fica escrita 1 vez só |
 
 ### #2.1 — Configuração: fontes e cores
 
@@ -263,7 +264,8 @@ e a #2.7 (cena) só espera as outras subtarefas listadas nas dependências dela.
 
 ### #2.7 — Cena 3D
 
-**Próximo passo:** plano aprovado (2026-10-17 11:42); pegar quando as dependências estiverem ✅, só pelo modelo da linha `Modelo`.
+**Próximo passo:** ✅ Concluída (2026-10-17 15:42). Nada a fazer; a #2.9 já pode ser pega e usa a
+API listada na Entrega.
 
 - **Nível:** PESADO — cena inteira, 5 arquivos ligados.
 - **Modelo:** só Opus 5.5+ ou Fable — nunca outro.
@@ -274,7 +276,52 @@ e a #2.7 (cena) só espera as outras subtarefas listadas nas dependências dela.
   etapa no GitHub. Atualização **por diferença** (cria, move ou remove só o que mudou).
 - **Critérios de aceitação:** cores só de `config/cores.js`; nenhum objeto recriado a cada leitura;
   limites de código respeitados; `node --check` passa.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit de fechamento da #2.7 (`git log --grep="#2.7"`). 7 arquivos novos em
+  `assets/js/cena/` e 2 ajustes:
+  - `cena-base.js`: classe `CenaBase(conteiner)` com renderer WebGL, camada de rótulos
+    (`CSS2DRenderer` num `<div class="cena__rotulos">`), câmera, luzes, `OrbitControls` (sem
+    passar do chão), `ResizeObserver`, `enquadrar(centro, tamanho)`, `iniciar(aCadaQuadro)`
+    (único `requestAnimationFrame`) e `aoClicar(callback)` (clique sem arrastar + raycaster).
+  - `cena-tarefas.js` (**arquivo a mais que o §5**, decidido abaixo): classe `CenaTarefas(base)`,
+    que recebe a base injetada, e `criarCenaTarefas(conteiner)`, que monta tudo e já anima.
+    **API para a #2.9:** `cena.atualizar(modelo)` a cada leitura (modelo de `montarModelo`) e
+    `cena.atualizarTempos(Date.now())` a cada segundo. A câmera é enquadrada na 1ª leitura e só
+    de novo quando muda o número de ilhas.
+  - `diferenca.js` (**a mais que o §5**): `sincronizar(mapa, itens, acoes)`, a diferença usada
+    nos 3 níveis (ilhas por `projeto.id`, estações por `frente.nome`, blocos por `reserva.id`).
+  - `ilha.js` (`Ilha`): plataforma + nome do projeto; estações em grade quase quadrada; a ilha
+    cresce além de `LADO_ILHA` quando tem muitas frentes (o `aulasenai` dá 21,6 com 31 frentes).
+    As ilhas ficam lado a lado no eixo x, sem sobrepor.
+  - `estacao.js` (`Estacao`): base com a cor da situação (🔄 azul, 👀 âmbar com pulsação na
+    intensidade emissiva, ⏹️ cinza translúcida); placa com o nome da frente e, se o nome não
+    mostrar, a IA (modelo) da 1ª reserva; pilha de blocos.
+  - `bloco-tarefa.js` (`BlocoTarefa`): cubo com a cor do nível; reserva parada ganha um casco
+    vermelho (`BackSide`, 12% maior); rótulo-link (`<a target="_blank" rel="noopener">`) com id,
+    título curto (48 caracteres), IA (modelo) e contador. Id com UUID aparece curto (`#171`).
+  - `rotulos.js`: cria, marca (classes `rotulo--*` do `painel.css`) e descarta rótulos; só
+    reescreve o texto que mudou.
+  - `config/cores.js`: medidas e cores novas da cena (fundo, luzes, estação, bloco, contorno,
+    pulsação, câmera). `assets/css/base.css`: classe `.cena__rotulos` (camada sem pegar o
+    arraste da câmera; os rótulos `rotulo--clicavel` continuam clicáveis).
+  - Geometrias são compartilhadas; ao remover, cada objeto libera o material e tira o rótulo do
+    DOM. Clique no bloco 3D ou no rótulo abre a etapa no GitHub em nova aba.
+- **Verificação:** módulos copiados para a pasta temporária da sessão, com
+  `three@0.170.0` do npm (só lá) e um DOM falso mínimo, rodando a `CenaTarefas` com uma base sem
+  WebGL contra os quadros lidos agora do GitHub (raw da branch). **34 conferências, todas ✅:**
+  `aulasenai` 31 estações = 31 frentes e 3 blocos = 3 reservas; `dashboard-ai` 1 e 1; 42
+  malhas e 38 rótulos na cena (conta exata); câmera enquadrada 1 vez; ilhas sem sobrepor; cor
+  de cada bloco igual à do nível; contorno só nas paradas (`#171` e `SUB-62.3`); as 32 estações
+  com cor, transparência e pulsação da situação certa. **2ª leitura igual: os mesmos 119
+  objetos (mesmos `uuid`), nada recriado**, sem reenquadrar. Quadro sintético: a ilha e a
+  estação que continuam são as mesmas; só o bloco que sumiu é descartado (1 material liberado,
+  1 rótulo tirado do DOM); bloco novo PESADO roxo com link certo; ⏹️ translúcida; 👀 pulsa (0,50
+  → 0,90) e a ativa não; contador "2 h 14 min" sem nova leitura; clique no bloco abre a etapa
+  em nova aba (mesmo com o casco escondido na frente) e na estação não abre nada; fonte sem
+  texto deixa a ilha vazia com aviso. `node --check` nos 7 arquivos; linhas ≤ 100 caracteres;
+  maior função 21 linhas; até 3 parâmetros; JSDoc em todas; sem token. Conferido no código do
+  r170: `CSS2DRenderer({ element })`, `CSS2DObject.center` e a remoção do elemento ao sair da
+  cena; `CSS2DRenderer.js` responde `200` no jsDelivr. A `CenaBase` (WebGL, controles, tamanho)
+  só roda no navegador: **conferir na tela** na #2.10.
 
 ### #2.8 — Painel 2D
 

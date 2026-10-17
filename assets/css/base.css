@@ -76,6 +76,13 @@ body {
   display: block;
 }
 
+/* Camada dos rótulos (CSS2DRenderer): por cima do canvas, sem pegar o arraste da câmera. */
+.cena__rotulos {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
 .aviso-sem-script {
   position: absolute;
   inset: 0;

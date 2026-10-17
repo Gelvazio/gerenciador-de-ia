@@ -163,6 +163,8 @@ assets/
     │   └── quadro.js            ← junta as fontes: projetos → frentes → reservas
     ├── cena/
     │   ├── cena-base.js         ← renderer, câmera, luzes, controles
+    │   ├── cena-tarefas.js      ← conteúdo: ilhas por projeto, atualizar por diferença
+    │   ├── diferenca.js         ← cria / mantém / descarta (usado nos 3 níveis)
     │   ├── ilha.js · estacao.js · bloco-tarefa.js
     │   └── rotulos.js           ← CSS2DRenderer
     ├── tela/
