@@ -10,13 +10,14 @@ quadros do `aulasenai` e do `dashboard-ai`: qual tarefa, por quem e há quanto t
 | Frente | Tarefa (etapa) | Situação | Atualizado em |
 |---|---|---|---|
 | Claude Code (Opus 5.5) (local · main) | #1 publicada ([001-19603a75](etapas/ETAPA-001-19603a75-VISUALIZADOR-DE-TASKS.md)); aguarda o usuário liberar a execução | 👀 Aguardando o usuário | 2026-10-17 11:18 |
+| Claude Code (Haiku 5.5) (local · main) | #1.1 ([001-19603a75](etapas/ETAPA-001-19603a75-VISUALIZADOR-DE-TASKS.md)): copiar as regras do quadro | 🔄 Em execução | 2026-10-17 11:20 |
 
 ## 📌 Tarefas
 
 | Tarefa | Título | Prioridade | Modelo | Depende de | Status | Em uso por | Etapa |
 |---|---|---|---|---|---|---|---|
 | **#1-19603a75-4695-407e-a0ee-cb9bbd781ca0** | **`CLAUDE.md` do visualizador de tasks em 3D (Three.js), quase em tempo real** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [001-19603a75](etapas/ETAPA-001-19603a75-VISUALIZADOR-DE-TASKS.md) |
-| #1.1 | Copiar as regras do quadro para `.claude/rules/tasks/` · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ⬜ Pendente | — | [001-19603a75](etapas/ETAPA-001-19603a75-VISUALIZADOR-DE-TASKS.md) |
+| #1.1 | Copiar as regras do quadro para `.claude/rules/tasks/` · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | 🔄 Em execução | Claude Code (Haiku 5.5) (local · main) (desde 2026-10-17 11:20) | [001-19603a75](etapas/ETAPA-001-19603a75-VISUALIZADOR-DE-TASKS.md) |
 | #1.2 | Escrever o `CLAUDE.md` do visualizador (Three.js, leitura dos quadros pelo GitHub) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #1.1 | ⬜ Pendente | — | [001-19603a75](etapas/ETAPA-001-19603a75-VISUALIZADOR-DE-TASKS.md) |
 
 ## Escopo do projeto
@@ -46,6 +47,7 @@ Página estática que lê o `tasks/STATUS.md` dos repositórios públicos `Gelva
 |---|---|---|---|
 | 2026-10-17 11:18 | Quadro próprio neste repositório (não no `aulasenai` nem no `rules-ai`) | Gelvazio | "QUADRO NOVO PRA ESTE REPO" |
 | 2026-10-17 11:18 | O visualizador usa a biblioteca Three.js | Gelvazio | "DEVE USAR A BIBLIOTECA Three.js" |
+| 2026-10-17 11:20 | Execução liberada: Haiku pega a #1.1 (LEVE); a #1.2 (PESADO) segue para Opus 5.5+ ou Fable | Gelvazio | "faça a tarefa pendente" |
 
 ## Pendências (ficou para depois)
 
