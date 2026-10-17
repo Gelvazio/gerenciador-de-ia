@@ -1,0 +1,158 @@
+/*
+ * Painel 2D (status, avisos e legenda) e rótulos HTML da cena 3D (CSS2DRenderer).
+ * Só usa os tokens de base.css. Os modificadores de cor existem para o painel.js e a cena
+ * aplicarem por classe, sem estilo inline.
+ */
+
+/* Painel */
+
+.painel {
+  position: absolute;
+  top: var(--espaco-3);
+  right: var(--espaco-3);
+  bottom: var(--espaco-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-3);
+  width: var(--largura-painel);
+  max-width: calc(100% - 2 * var(--espaco-3));
+  padding: var(--espaco-4);
+  overflow-y: auto;
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  backdrop-filter: blur(6px);
+}
+
+.painel__titulo {
+  margin: 0;
+  font-size: var(--tamanho-titulo);
+}
+
+.painel__subtitulo,
+.painel__texto {
+  margin: var(--espaco-1) 0 0;
+  color: var(--cor-texto-suave);
+  font-size: var(--tamanho-pequeno);
+}
+
+.painel__secao-titulo {
+  margin: 0 0 var(--espaco-2);
+  font-size: var(--tamanho-pequeno);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--cor-texto-suave);
+}
+
+.painel__lista {
+  display: grid;
+  gap: var(--espaco-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.painel__aviso {
+  margin: 0 0 var(--espaco-2);
+  padding: var(--espaco-2) var(--espaco-3);
+  border: 1px solid var(--cor-aguardando-usuario);
+  border-radius: var(--raio);
+  font-size: var(--tamanho-pequeno);
+}
+
+.painel__aviso--erro {
+  border-color: var(--cor-reserva-parada);
+}
+
+/* Itens da lista de fontes */
+
+.fonte__nome {
+  font-weight: 600;
+}
+
+.fonte__detalhe {
+  display: block;
+  color: var(--cor-texto-suave);
+  font-size: var(--tamanho-pequeno);
+}
+
+.fonte__numeros {
+  font-family: var(--fonte-numeros);
+}
+
+/* Legenda */
+
+.legenda__item {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-2);
+}
+
+.legenda__cor {
+  flex: none;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 0.25rem;
+  background: var(--cor-nivel-sem);
+}
+
+.legenda__cor--leve { background: var(--cor-nivel-leve); }
+.legenda__cor--medio { background: var(--cor-nivel-medio); }
+.legenda__cor--pesado { background: var(--cor-nivel-pesado); }
+.legenda__cor--sem-nivel { background: var(--cor-nivel-sem); }
+.legenda__cor--aguardando { background: var(--cor-aguardando-usuario); }
+.legenda__cor--encerrada { background: var(--cor-encerrada); opacity: 0.6; }
+.legenda__cor--parada {
+  background: transparent;
+  border: 2px solid var(--cor-reserva-parada);
+}
+
+/* Rótulos da cena 3D */
+
+.rotulo {
+  max-width: 14rem;
+  padding: var(--espaco-1) var(--espaco-2);
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  color: var(--cor-texto);
+  font-size: var(--tamanho-pequeno);
+  line-height: 1.3;
+  pointer-events: none;
+}
+
+.rotulo--clicavel {
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.rotulo__titulo {
+  display: block;
+  font-weight: 600;
+}
+
+.rotulo__quem {
+  display: block;
+  color: var(--cor-texto-suave);
+}
+
+.rotulo__tempo {
+  font-family: var(--fonte-numeros);
+}
+
+.rotulo--aguardando { border-color: var(--cor-aguardando-usuario); }
+.rotulo--encerrada { border-color: var(--cor-encerrada); opacity: 0.6; }
+.rotulo--parada { border-color: var(--cor-reserva-parada); }
+
+@media (max-width: 40rem) {
+  .painel {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    max-width: none;
+    height: var(--altura-painel-celular);
+    border-radius: var(--raio) var(--raio) 0 0;
+  }
+}

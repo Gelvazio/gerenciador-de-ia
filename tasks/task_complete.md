@@ -7,3 +7,4 @@
 | #2.1 | Configuração: fontes e cores · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ✅ Concluída (2026-10-17 11:47) | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #3.1 | Regra do gatilho `;` em `frentes-e-reserva.md` e no `CLAUDE.md` · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ✅ Concluída (2026-10-17 11:58) | — | [003-c61319f5](etapas/ETAPA-003-c61319f5-GATILHO-PONTO-E-VIRGULA.md) |
 | **#1-19603a75-4695-407e-a0ee-cb9bbd781ca0** | **`CLAUDE.md` do visualizador de tasks em 3D (Three.js), quase em tempo real** | 🟡 Média | — | — | ✅ Concluída (2026-10-17 11:25) | — | [001-19603a75](etapas/ETAPA-001-19603a75-VISUALIZADOR-DE-TASKS.md) |
+| #2.2 | Página: HTML, import map e CSS · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.1 | ✅ Concluída (2026-10-17 12:05) | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |

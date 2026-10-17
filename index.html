@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gerenciador de IA — tarefas em 3D</title>
+  <meta name="description"
+        content="Visualizador 3D, quase em tempo real, das tarefas em andamento nos quadros do
+                 aulasenai e do dashboard-ai.">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/painel.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <main class="visualizador">
+    <section id="cena" class="cena" aria-label="Cena 3D das tarefas em andamento"></section>
+
+    <aside id="painel" class="painel" aria-label="Painel de status">
+      <header class="painel__cabecalho">
+        <h1 class="painel__titulo">Gerenciador de IA</h1>
+        <p class="painel__subtitulo">Tarefas em andamento, quase em tempo real</p>
+      </header>
+
+      <section id="painel-fontes" class="painel__secao" aria-label="Fontes dos quadros">
+        <h2 class="painel__secao-titulo">Quadros lidos</h2>
+        <p id="painel-leitura" class="painel__texto">Aguardando a primeira leitura…</p>
+        <ul id="painel-lista-fontes" class="painel__lista"></ul>
+      </section>
+
+      <section id="painel-avisos" class="painel__secao" aria-live="polite"
+               aria-label="Avisos de leitura"></section>
+
+      <section id="painel-legenda" class="painel__secao" aria-label="Legenda das cores">
+        <h2 class="painel__secao-titulo">Legenda</h2>
+        <ul id="painel-lista-legenda" class="painel__lista"></ul>
+      </section>
+    </aside>
+
+    <noscript>
+      <p class="aviso-sem-script">
+        Esta página precisa de JavaScript para desenhar a cena 3D e ler os quadros.
+      </p>
+    </noscript>
+  </main>
+
+  <script type="module" src="assets/js/principal.js"></script>
+</body>
+</html>

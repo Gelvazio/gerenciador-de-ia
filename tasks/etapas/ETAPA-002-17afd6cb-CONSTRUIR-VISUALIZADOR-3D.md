@@ -63,7 +63,8 @@ feita, por quem e há quanto tempo.
 
 ### #2.2 — Página: HTML, import map e CSS
 
-**Próximo passo:** plano aprovado (2026-10-17 11:42); pegar quando as dependências estiverem ✅, só pelo modelo da linha `Modelo`.
+**Próximo passo:** ✅ Concluída (2026-10-17 12:05). Nada a fazer; a #2.7 e a #2.8 usam os ids e
+classes listados na Entrega.
 
 - **Nível:** MEDIO — estrutura de página em 3 arquivos.
 - **Modelo:** só Sonnet — nunca outro.
@@ -72,7 +73,29 @@ feita, por quem e há quanto tempo.
   (tokens em `:root`, layout em tela cheia) e `assets/css/painel.css` (painel 2D e rótulos).
 - **Critérios de aceitação:** sem `style=""` e sem JS inline; versão exata do Three.js; cores e
   medidas só em tokens.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit de fechamento da #2.2 (`git log --grep="#2.2"`): `index.html`,
+  `assets/css/base.css` e `assets/css/painel.css`. Contrato para as próximas subtarefas:
+  - **Ids do HTML:** `cena` (a #2.7 põe o canvas e o `CSS2DRenderer` aqui), `painel`,
+    `painel-fontes`, `painel-leitura` (texto da última leitura), `painel-lista-fontes` (`<ul>`),
+    `painel-avisos` (`aria-live`) e `painel-lista-legenda` (`<ul>`, a #2.8 monta a legenda).
+  - **Classes para a #2.8:** `painel__aviso` e `painel__aviso--erro`; `fonte__nome`,
+    `fonte__detalhe`, `fonte__numeros`; `legenda__item`, `legenda__cor` e os modificadores
+    `--leve`, `--medio`, `--pesado`, `--sem-nivel`, `--aguardando`, `--encerrada`, `--parada`.
+  - **Classes para a #2.7 (rótulos):** `rotulo`, `rotulo--clicavel`, `rotulo__titulo`,
+    `rotulo__quem`, `rotulo__tempo` e os modificadores `rotulo--aguardando`,
+    `rotulo--encerrada`, `rotulo--parada`.
+  - **Tokens de cor** em `:root` de `base.css`, iguais aos de `config/cores.js` (mudou lá, muda
+    aqui).
+  - `index.html` aponta para `assets/js/principal.js`, que só existe depois da #2.9 (até lá o
+    navegador mostra 404 para esse arquivo; é esperado).
+- **Verificação:** script de conferência na pasta temporária da sessão (não entra no Git):
+  import map é JSON válido com `three@0.170.0` nas duas entradas; nenhum `style=`, `onXXX=` ou
+  script com código inline; todo `var(--…)` tem token definido; nenhuma cor fixa fora de `:root`;
+  chaves do CSS balanceadas; os 8 tokens de cor batem com `config/cores.js`; todos os ids do HTML
+  existem; todas as classes do HTML têm regra no CSS (exceto `painel__cabecalho`, só contêiner);
+  nenhuma linha passa de 100 caracteres; `three.module.js`, `OrbitControls.js` e
+  `CSS2DRenderer.js` respondem `200` no jsDelivr. **Conferir na tela:** layout, posição do painel
+  e aparência (a IA não abre navegador).
 
 ### #2.3 — Leitor de tabela Markdown e utilitário de tempo
 
