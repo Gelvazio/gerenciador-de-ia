@@ -18,3 +18,5 @@
 | #2.8 | Painel 2D · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.2, #2.6 | ✅ Concluída (2026-10-17 12:42) | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.7 | Cena 3D (Three.js) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #2.1, #2.2, #2.6 | ✅ Concluída (2026-10-17 15:42) | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.9 | Integração (`principal.js`) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #2.5, #2.7, #2.8 | ✅ Concluída (2026-10-17 13:43) | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
+| #5.1 | Regra no `CLAUDE.md` e `.gitignore` · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | — | ✅ Concluída (2026-10-17 13:46) | — | [005-e52472de](etapas/ETAPA-005-e52472de-UMA-SESSAO-POR-VEZ.md) |
+| **#5-e52472de-808b-4618-a602-10d57c7c3d3c** | **Uma sessão de IA por vez nesta pasta** | 🟠 Alta | — | — | ✅ Concluída (2026-10-17 13:46) | — (não reservável) | [005-e52472de](etapas/ETAPA-005-e52472de-UMA-SESSAO-POR-VEZ.md) |

@@ -19,8 +19,6 @@ quadros do `aulasenai` e do `dashboard-ai`: qual tarefa, por quem e há quanto t
 |---|---|---|---|---|---|---|---|
 | **#2-17afd6cb-ac6a-4e06-89b5-d3279a747688** | **Construir o visualizador 3D de tasks (projeto todo, conforme o `CLAUDE.md`)** | 🟡 Média | — | — | ⬜ Pendente (plano aprovado 2026-10-17 11:42) | — (não reservável) | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.10 | `README.md` e conferência na tela · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #2.9 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
-| **#5-e52472de-808b-4618-a602-10d57c7c3d3c** | **Uma sessão de IA por vez nesta pasta** | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [005-e52472de](etapas/ETAPA-005-e52472de-UMA-SESSAO-POR-VEZ.md) |
-| #5.1 | Regra no `CLAUDE.md` e `.gitignore` · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | — | 🔄 Em progresso | Claude Code (Haiku 5.5 · executor-leve; líder Opus 5.5) (local · main) (desde 2026-10-17 13:43) | [005-e52472de](etapas/ETAPA-005-e52472de-UMA-SESSAO-POR-VEZ.md) |
 
 ## Escopo do projeto
 

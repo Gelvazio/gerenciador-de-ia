@@ -6,7 +6,7 @@
 
 ### #5.1 — Regra no `CLAUDE.md` e `.gitignore`
 
-**Próximo passo:** acrescentar a seção abaixo no fim do `CLAUDE.md` e criar o `.gitignore`.
+**Próximo passo:** — (entregue).
 
 - **Nível:** LEVE — só `.md` e `.gitignore`.
 - **Modelo:** só Haiku — nunca outro
@@ -14,6 +14,8 @@
 - **Descrição:** (1) no fim do `CLAUDE.md` (depois da seção `## 9. Idioma`), uma linha em branco
   e a seção abaixo, sem mudar; (2) criar `.gitignore` com a linha `tasks/.sessao-ativa`.
 - **Critério de pronto:** os 2 arquivos com o texto exato; nada mais alterado.
+- **Entrega (2026-10-17 13:46, Haiku · executor-leve; líder Opus 5.5):** `CLAUDE.md` (seção 10) e `.gitignore`.
+- **Verificação (líder):** fim do `CLAUDE.md` igual ao bloco desta etapa (comparação por script); `git check-ignore tasks/.sessao-ativa` confirma que fica fora do Git.
 
 ```markdown
 ## 10. Uma sessão por vez
