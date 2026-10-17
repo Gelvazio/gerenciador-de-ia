@@ -11,3 +11,4 @@
 | #2.3 | Leitor de tabela Markdown e utilitário de tempo · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ✅ Concluída (2026-10-17 12:12) | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.4 | Leitores de reserva e do quadro · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.3 | ✅ Concluída (2026-10-17 12:17) | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.5 | Cliente do GitHub (API + raw pelo SHA) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.1 | ✅ Concluída (2026-10-17 12:30) | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
+| **#3-c61319f5-f7c7-4adc-8883-edf33ebe16f8** | **Gatilho `;` = pegue a próxima tarefa do seu modelo (regra do projeto)** | 🟡 Média | — | — | ✅ Concluída (2026-10-17 11:58) | — | [003-c61319f5](etapas/ETAPA-003-c61319f5-GATILHO-PONTO-E-VIRGULA.md) |
