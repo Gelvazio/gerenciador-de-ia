@@ -9,3 +9,4 @@
 | **#1-19603a75-4695-407e-a0ee-cb9bbd781ca0** | **`CLAUDE.md` do visualizador de tasks em 3D (Three.js), quase em tempo real** | 🟡 Média | — | — | ✅ Concluída (2026-10-17 11:25) | — | [001-19603a75](etapas/ETAPA-001-19603a75-VISUALIZADOR-DE-TASKS.md) |
 | #2.2 | Página: HTML, import map e CSS · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.1 | ✅ Concluída (2026-10-17 12:01) | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.3 | Leitor de tabela Markdown e utilitário de tempo · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | — | ✅ Concluída (2026-10-17 12:12) | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
+| #2.4 | Leitores de reserva e do quadro · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.3 | ✅ Concluída (2026-10-17 12:17) | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |

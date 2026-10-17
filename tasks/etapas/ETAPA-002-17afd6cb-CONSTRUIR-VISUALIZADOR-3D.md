@@ -131,7 +131,8 @@ funções listadas na Entrega.
 
 ### #2.4 — Leitores de reserva e do quadro
 
-**Próximo passo:** plano aprovado (2026-10-17 11:42); pegar quando as dependências estiverem ✅, só pelo modelo da linha `Modelo`.
+**Próximo passo:** ✅ Concluída (2026-10-17 12:17). Nada a fazer; a #2.6 já pode ser pega (depende
+só da #2.4) e usa as funções listadas na Entrega.
 
 - **Nível:** MEDIO — lógica em 2 arquivos.
 - **Modelo:** só Sonnet — nunca outro.
@@ -141,7 +142,36 @@ funções listadas na Entrega.
   pelo título, mãe × subtarefa; frentes da tabela "🧭 Frentes" quando existir).
 - **Critérios de aceitação:** os 3 exemplos do `CLAUDE.md` §3 dão IA, modelo e frente certos;
   rodando com `node` contra os 2 quadros, as reservas 🔄 batem com o quadro.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit de fechamento da #2.4 (`git log --grep="#2.4"`), 2 arquivos novos:
+  - `leitor-reserva.js`: `lerReserva(texto)` → `{ tipo, ia, modelo, frente, desde, textoOriginal }`;
+    `tipo` é um de `TIPO_RESERVA` (`livre`, `nao-reservavel`, `trava`, `reserva`); `desde` é um
+    `Date` (ou `null` sem data com hora). Frente = o parêntese com ` · ` (o último); modelo = o
+    outro parêntese; sem parênteses o texto todo é a frente.
+  - `leitor-quadro.js`: `lerQuadro(markdown)` → `{ tarefas, frentes }`. Tarefa: `id`, `titulo`
+    (limpo), `ehMae`, `nivel` (`LEVE`/`MEDIO`/`PESADO`/`sem nível`), `ehDoUsuario`, `prioridade`
+    (`maxima`/`alta`/`media`/`baixa`), `status` (`pendente`, `em-execucao`, `concluido`,
+    `bloqueado`, `aguardando-usuario`), `statusTexto`, `reserva`, `dependencias` (ids) e `etapa`
+    (`{ texto, caminho }`). Frente: `nome`, `tarefaTexto`, `situacao` (`ativa`,
+    `aguardando-usuario`, `encerrada`), `situacaoTexto` e `atualizadoEm` (`Date`). Também
+    exporta `lerTarefa`, `lerFrente`, `lerNivel` e `limparTitulo`.
+  - **Decisões de leitura:** o nível vem **só** da coluna `Modelo` quando ela existe (`Usuário`,
+    `—` e `⚠️ sem nível` dão "sem nível", mesmo com marcador no título); sem a coluna (caso do
+    `dashboard-ai`), vale o `` `NIVEL · effort x` `` do título. Mãe = título ou id em negrito, ou
+    "Em uso por" = `— (não reservável)`. Quadro sem "🧭 Frentes" devolve `frentes: []`; montar as
+    frentes pelas reservas é da #2.6.
+- **Verificação:** módulos copiados para a pasta temporária da sessão (com `package.json`
+  `"type": "module"`, na mesma estrutura de pastas) e rodados com `node` contra os quadros lidos
+  agora do GitHub e contra o quadro deste projeto. Os 3 exemplos do `CLAUDE.md` §3 dão IA, modelo,
+  frente e data certos (e `—`, `— (não reservável)`, `🔒`, sem `(desde`, só modelo). Contagens
+  iguais às feitas por `grep`/`awk`: `aulasenai` 850 tarefas, 815 ⬜, 7 🔄 e 2 reservas
+  (`#171-…` e `#243.3`, com IA, modelo e frente certos); `dashboard-ai` 43 tarefas, 39 ⬜, 1 🔄 e
+  1 reserva (`SUB-62.3`, Qoder, `local · main`), 31 travas. Níveis do `aulasenai` iguais à coluna
+  `Modelo` (3 LEVE, 53 MEDIO, 725 PESADO, 69 sem nível) e, no `dashboard-ai`, iguais aos
+  marcadores do título (39). 33 frentes do `aulasenai` com situação e data; `dashboard-ai` sem
+  frentes e sem erro. A conferência achou e corrigiu um erro: o nível caía no título mesmo com
+  `Modelo` = `Usuário`. A #2.4 reservada por esta frente foi lida certo (Sonnet 5.5, `local ·
+  main`, nível MEDIO, depende de `#2.3`). Limites: linhas ≤ 100 caracteres, funções de 3 a 22
+  linhas, até 2 parâmetros, JSDoc em todas, sem DOM nem Three.js.
 
 ### #2.5 — Cliente do GitHub
 
