@@ -63,7 +63,7 @@ feita, por quem e há quanto tempo.
 
 ### #2.2 — Página: HTML, import map e CSS
 
-**Próximo passo:** ✅ Concluída (2026-10-17 12:05). Nada a fazer; a #2.7 e a #2.8 usam os ids e
+**Próximo passo:** ✅ Concluída (2026-10-17 12:01). Nada a fazer; a #2.7 e a #2.8 usam os ids e
 classes listados na Entrega.
 
 - **Nível:** MEDIO — estrutura de página em 3 arquivos.
@@ -99,7 +99,7 @@ classes listados na Entrega.
 
 ### #2.3 — Leitor de tabela Markdown e utilitário de tempo
 
-**Próximo passo:** ✅ Concluída (2026-10-17 12:20). Nada a fazer; a #2.4 já pode ser pega e usa as
+**Próximo passo:** ✅ Concluída (2026-10-17 12:12). Nada a fazer; a #2.4 já pode ser pega e usa as
 funções listadas na Entrega.
 
 - **Nível:** MEDIO — lógica em 2 arquivos.
