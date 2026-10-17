@@ -42,3 +42,16 @@ trabalham no mesmo repositório e só se falam pelos arquivos. Quadro: `quadro.m
 
 - Conflito no `STATUS.md` ao sincronizar: manter as mudanças das duas frentes (cada uma só mexe
   nas próprias linhas) e reler antes de seguir.
+
+## Gatilho `;` — pegue a próxima tarefa do seu modelo
+
+- Mensagem do usuário **só com `;`** = "Pegue a próxima tarefa disponível para o seu modelo".
+  Vale para todas as IAs, sem confirmar nada antes.
+- A IA faz, nesta ordem: **1)** sincronizar com o remoto; **2)** ler o `STATUS.md`; **3)** escolher a
+  subtarefa por "Pegar uma subtarefa" (livre, dependências ✅, **do seu modelo**, maior
+  prioridade); **4)** reservar (commit + push); **5)** executar até entregar; **6)** encerrar pelo
+  ciclo da task e responder só **TAREFA FINALIZADA E SINCRONIZADA!**
+- **Sem subtarefa livre do seu modelo** → não pega nenhuma e diz ao usuário qual modelo tem
+  subtarefa livre (o `;` nunca autoriza pegar tarefa de outro modelo: `niveis-e-modelos.md`).
+- Tarefa grande sem o "sim" do usuário ao plano **não** é pega pelo `;` (fica 👀 até o "sim").
+- É **uma** subtarefa por mensagem `;`; para a seguinte, o usuário manda `;` de novo.

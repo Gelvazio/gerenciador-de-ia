@@ -11,7 +11,7 @@ quadros do `aulasenai` e do `dashboard-ai`: qual tarefa, por quem e há quanto t
 |---|---|---|---|
 | Claude Code (Opus 5.5) (local · main) | #2 aprovada ([002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md)); sem subtarefa livre do Opus (#2.7 e #2.9 aguardam dependências) | ⏹️ Encerrada | 2026-10-17 11:42 |
 | Claude Code (Sonnet 5.5) (local · main) | #3 publicada ([003-c61319f5](etapas/ETAPA-003-c61319f5-GATILHO-PONTO-E-VIRGULA.md)); a #3.1 é LEVE (só Haiku), então esta frente não a executa | ⏹️ Encerrada | 2026-10-17 11:57 |
-| Claude Code (Haiku 5.5) (local · main) | #3.1 ([003-c61319f5](etapas/ETAPA-003-c61319f5-GATILHO-PONTO-E-VIRGULA.md)): regra do gatilho `;` neste projeto | 🔄 Em execução | 2026-10-17 11:56 |
+| Claude Code (Haiku 5.5) (local · main) | #3.1 ([003-c61319f5](etapas/ETAPA-003-c61319f5-GATILHO-PONTO-E-VIRGULA.md)) concluída: regra do gatilho `;` neste projeto | ⏹️ Encerrada | 2026-10-17 11:58 |
 
 ## 📌 Tarefas
 
@@ -28,7 +28,6 @@ quadros do `aulasenai` e do `dashboard-ai`: qual tarefa, por quem e há quanto t
 | #2.9 | Integração (`principal.js`) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #2.5, #2.7, #2.8 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.10 | `README.md` e conferência na tela · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #2.9 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | **#3-c61319f5-f7c7-4adc-8883-edf33ebe16f8** | **Gatilho `;` = pegue a próxima tarefa do seu modelo (regra do projeto)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [003-c61319f5](etapas/ETAPA-003-c61319f5-GATILHO-PONTO-E-VIRGULA.md) |
-| #3.1 | Regra do gatilho `;` em `frentes-e-reserva.md` e no `CLAUDE.md` · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | 🔄 Em execução | Claude Code (Haiku 5.5) (local · main) (desde 2026-10-17 11:56) | [003-c61319f5](etapas/ETAPA-003-c61319f5-GATILHO-PONTO-E-VIRGULA.md) |
 
 ## Escopo do projeto
 

@@ -8,10 +8,15 @@ do `rules-ai`, etapa 006, conflito C24), para que valha também aqui se a regra 
 
 ### #3.1 — Regra do gatilho `;` neste projeto
 
-**Próximo passo:** reservar e executar (só Haiku). Primeiro `git pull --rebase origin main`.
+**Próximo passo:** ✅ Concluída (2026-10-17 11:58). Nada a fazer.
 
 - **Nível:** LEVE — só `.md`.
 - **Modelo:** só Haiku — nunca outro (regra C22, sem exceção; o pedido veio a uma sessão Sonnet).
+- **Entrega:** commit de fechamento da #3.1 (`git log --grep="#3.1"`): seção "Gatilho `;`" no fim de
+  `.claude/rules/tasks/frentes-e-reserva.md` e linha da mensagem `;` em `CLAUDE.md` (§8).
+- **Verificação:** o bloco de `frentes-e-reserva.md` é idêntico ao "Texto da regra" da etapa 006 do
+  `rules-ai` (comparado linha a linha, com `diff`). A linha de lista "Sem subtarefa livre…" tem 101
+  caracteres: ficou assim para não divergir da regra global.
 - **Descrição:** (1) acrescentar ao fim de `.claude/rules/tasks/frentes-e-reserva.md` a seção
   "Gatilho `;`" **idêntica** ao "Texto da regra" da etapa 006 do `rules-ai`
   (`C:\fontes\rules-ai\tasks\etapas\ETAPA-006-GATILHO-GLOBAL.md`); (2) em `CLAUDE.md`, na seção

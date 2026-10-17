@@ -204,6 +204,8 @@ ES modules não carregam por `file://` (duplo clique). A página roda por servid
 - Todo pedido que muda arquivo vira TASK **antes** de executar: criar → publicar → reservar →
   trabalhar. Ao terminar: responder **TAREFA FINALIZADA E SINCRONIZADA!**
 - Mensagem só com `.` → listar as tarefas pendentes do quadro, sem começar nenhuma.
+- Mensagem só com `;` → pegar a próxima subtarefa livre do **seu** modelo e executar (regra em
+  [`frentes-e-reserva.md`](.claude/rules/tasks/frentes-e-reserva.md), global C24 do `rules-ai`).
 - Mensagem `verify` → verificação do quadro (`verificacao.md`).
 
 ### Níveis — quem pega o quê
