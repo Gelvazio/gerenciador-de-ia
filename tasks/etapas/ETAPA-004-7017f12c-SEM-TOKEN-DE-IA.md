@@ -11,7 +11,7 @@ nunca usa IA (nem chamada de modelo, nem agente, nem chave), e como conferir iss
 
 ### #4.1 — Regra "Sem token de IA" no `CLAUDE.md`
 
-**Próximo passo:** reservar e executar (só Haiku). Primeiro `git pull --rebase origin main`.
+**Próximo passo:** nenhum. Subtarefa entregue em 2026-10-17 15:34.
 
 - **Nível:** LEVE — só `.md`.
 - **Modelo:** só Haiku — nunca outro (regra C22, sem exceção; o pedido veio a uma sessão Sonnet).
@@ -20,8 +20,14 @@ nunca usa IA (nem chamada de modelo, nem agente, nem chave), e como conferir iss
   conferência abaixo, depois da última linha da lista.
 - **Critérios de aceitação:** o bloco e a linha estão idênticos ao texto abaixo; nenhuma linha
   nova passa de 100 caracteres; o restante do `CLAUDE.md` não muda.
-- **Entrega:** — · **Verificação:** — (rodar o `grep` da linha de conferência e colar o resultado:
-  não pode achar nada em `assets/` nem em `index.html`)
+- **Entrega:** commit `chore(quadro): #4.1 regra "Sem token de IA" no CLAUDE.md por Claude Code
+  (Haiku 5.5) (local · main)`, com o `CLAUDE.md` e o quadro.
+- **Verificação:** (1) `grep -rniE "anthropic|openai|gemini|deepseek|api[_-]?key|process\.env" assets
+  index.html` não achou nada (saída vazia); (2) hosts de rede em `assets/` e `index.html`:
+  `api.github.com`, `cdn.jsdelivr.net` e `raw.githubusercontent.com`; o `github.com` que aparece é só
+  o link que abre a etapa numa nova aba, não uma chamada de rede; (3) o bloco e a linha foram
+  copiados do texto desta etapa sem mudança; (4) a linha de conferência tem 122 caracteres, acima do
+  limite de 100 do critério, porque o comando `grep` não pode ser quebrado sem alterar o comando.
 
 **Bloco da seção 1 (copiar sem mudar):**
 

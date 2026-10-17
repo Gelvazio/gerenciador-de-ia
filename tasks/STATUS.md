@@ -11,7 +11,7 @@ quadros do `aulasenai` e do `dashboard-ai`: qual tarefa, por quem e há quanto t
 |---|---|---|---|
 | Claude Code (Opus 5.5) (local · main) | #2 aprovada ([002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md)); sem subtarefa livre do Opus (#2.7 e #2.9 aguardam dependências) | ⏹️ Encerrada | 2026-10-17 11:42 |
 | Claude Code (Sonnet 5.5) (local · main) | #2.6 ([002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md)): modelo do quadro (a #4.1 é LEVE, só Haiku) | 🔄 Em execução | 2026-10-17 12:32 |
-| Claude Code (Haiku 5.5) (local · main) | #4.1 ([004-7017f12c](etapas/ETAPA-004-7017f12c-SEM-TOKEN-DE-IA.md)): regra "Sem token de IA" no `CLAUDE.md` | 🔄 Ativa | 2026-10-17 15:33 |
+| Claude Code (Haiku 5.5) (local · main) | #4.1 ([004-7017f12c](etapas/ETAPA-004-7017f12c-SEM-TOKEN-DE-IA.md)) concluída: regra "Sem token de IA" no `CLAUDE.md` | ⏹️ Encerrada | 2026-10-17 15:34 |
 
 ## 📌 Tarefas
 
@@ -23,8 +23,6 @@ quadros do `aulasenai` e do `dashboard-ai`: qual tarefa, por quem e há quanto t
 | #2.8 | Painel 2D · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.2, #2.6 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.9 | Integração (`principal.js`) · `PESADO · effort high` | 🟡 Média | PESADO · só Opus 5.5+ ou Fable | #2.5, #2.7, #2.8 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.10 | `README.md` e conferência na tela · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #2.9 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
-| **#4-7017f12c-053b-4384-9bab-0cd67585e900** | **O visualizador nunca consome token de IA (regra do projeto)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [004-7017f12c](etapas/ETAPA-004-7017f12c-SEM-TOKEN-DE-IA.md) |
-| #4.1 | Regra "Sem token de IA" no `CLAUDE.md` · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | 🔄 Em execução | Claude Code (Haiku 5.5) (local · main) (desde 2026-10-17 15:33) | [004-7017f12c](etapas/ETAPA-004-7017f12c-SEM-TOKEN-DE-IA.md) |
 
 ## Escopo do projeto
 

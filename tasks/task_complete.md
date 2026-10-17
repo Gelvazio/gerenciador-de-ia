@@ -12,3 +12,5 @@
 | #2.4 | Leitores de reserva e do quadro · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.3 | ✅ Concluída (2026-10-17 12:17) | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.5 | Cliente do GitHub (API + raw pelo SHA) · `MEDIO · effort medium` | 🟡 Média | MEDIO · só Sonnet | #2.1 | ✅ Concluída (2026-10-17 12:30) | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | **#3-c61319f5-f7c7-4adc-8883-edf33ebe16f8** | **Gatilho `;` = pegue a próxima tarefa do seu modelo (regra do projeto)** | 🟡 Média | — | — | ✅ Concluída (2026-10-17 11:58) | — | [003-c61319f5](etapas/ETAPA-003-c61319f5-GATILHO-PONTO-E-VIRGULA.md) |
+| #4.1 | Regra "Sem token de IA" no `CLAUDE.md` · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ✅ Concluída (2026-10-17 15:34) | — | [004-7017f12c](etapas/ETAPA-004-7017f12c-SEM-TOKEN-DE-IA.md) |
+| **#4-7017f12c-053b-4384-9bab-0cd67585e900** | **O visualizador nunca consome token de IA (regra do projeto)** | 🟡 Média | — | — | ✅ Concluída (2026-10-17 15:34) | — | [004-7017f12c](etapas/ETAPA-004-7017f12c-SEM-TOKEN-DE-IA.md) |

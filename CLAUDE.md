@@ -15,6 +15,19 @@ Página estática que mostra, **quase em tempo real**, numa cena 3D feita com **
 A página **só lê** os quadros de outros repositórios. Ela nunca escreve neles, não tem login e
 não usa banco.
 
+### Sem token de IA
+
+- ⛔ O visualizador **nunca consome token de IA**, nem na página publicada nem rodando aqui no
+  computador. Vale para o código do projeto, para a página e para qualquer script dele.
+- Proibido: chamar API de modelo de IA (Anthropic, OpenAI, Google, DeepSeek e outras), usar agente,
+  biblioteca ou SDK de IA, e guardar chave de IA no código, na página, no `.env` ou no Git.
+- Tudo o que a página faz é **código comum**: ler os quadros públicos pelo GitHub (API de commits e
+  raw), interpretar as tabelas e desenhar a cena. Resumos, contagens e tempos são calculados por
+  regra, nunca por IA.
+- Não fala do trabalho das IAs que **constroem** o projeto (as sessões do Claude Code): vale só
+  para o que o visualizador faz quando roda.
+- Se uma ideia nova parecer pedir IA, **perguntar ao usuário antes**; não incluir por conta própria.
+
 ## 2. Fontes de dados
 
 | Projeto | Arquivo lido | Tem "🧭 Frentes"? | Coluna Modelo? |
@@ -183,6 +196,9 @@ ES modules não carregam por `file://` (duplo clique). A página roda por servid
   `STATUS.md` baixado na pasta temporária da sessão e imprimir o resumo (frentes, reservas,
   contagens). Isso é conferência manual, não suíte de testes, e o script não entra no Git.
 - O que só a tela mostra (cores, posição, animação) → avisar o usuário para conferir.
+- ✅ Conferir que não entrou IA: `grep -rniE "anthropic|openai|gemini|deepseek|api[_-]?key|process\.env" assets index.html`
+  não pode achar nada, e os únicos hosts de rede são `cdn.jsdelivr.net`, `api.github.com` e
+  `raw.githubusercontent.com`.
 
 ## 7. Git
 
