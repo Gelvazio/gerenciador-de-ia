@@ -19,6 +19,8 @@ quadros do `aulasenai` e do `dashboard-ai`: qual tarefa, por quem e há quanto t
 |---|---|---|---|---|---|---|---|
 | **#2-17afd6cb-ac6a-4e06-89b5-d3279a747688** | **Construir o visualizador 3D de tasks (projeto todo, conforme o `CLAUDE.md`)** | 🟡 Média | — | — | ⬜ Pendente (plano aprovado 2026-10-17 11:42) | — (não reservável) | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.10 | `README.md` e conferência na tela · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #2.9 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
+| **#5-e52472de-808b-4618-a602-10d57c7c3d3c** | **Uma sessão de IA por vez nesta pasta** | 🟠 Alta | — | — | 🔄 Em execução | — (não reservável) | [005-e52472de](etapas/ETAPA-005-e52472de-UMA-SESSAO-POR-VEZ.md) |
+| #5.1 | Regra no `CLAUDE.md` e `.gitignore` · `LEVE · effort low` | 🟠 Alta | LEVE · só Haiku | — | 🔄 Em progresso | Claude Code (Haiku 5.5 · executor-leve; líder Opus 5.5) (local · main) (desde 2026-10-17 13:43) | [005-e52472de](etapas/ETAPA-005-e52472de-UMA-SESSAO-POR-VEZ.md) |
 
 ## Escopo do projeto
 
@@ -33,6 +35,7 @@ Página estática que lê o `tasks/STATUS.md` dos repositórios públicos `Gelva
 | 002-17afd6cb | Construir o visualizador 3D de tasks, projeto todo (#2, pedida em 2026-10-17 11:29) | [ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | 003-c61319f5 | Gatilho `;` = pegue a próxima tarefa do seu modelo (#3, pedida em 2026-10-17 11:53) | [ETAPA-003-c61319f5-GATILHO-PONTO-E-VIRGULA.md](etapas/ETAPA-003-c61319f5-GATILHO-PONTO-E-VIRGULA.md) |
 | 004-7017f12c | O visualizador nunca consome token de IA (#4, pedida em 2026-10-17 12:30) | [ETAPA-004-7017f12c-SEM-TOKEN-DE-IA.md](etapas/ETAPA-004-7017f12c-SEM-TOKEN-DE-IA.md) |
+| 005-e52472de | Uma sessão de IA por vez nesta pasta (#5, pedida em 2026-10-17 13:43) | [ETAPA-005-e52472de-UMA-SESSAO-POR-VEZ.md](etapas/ETAPA-005-e52472de-UMA-SESSAO-POR-VEZ.md) |
 
 ## Riscos
 
