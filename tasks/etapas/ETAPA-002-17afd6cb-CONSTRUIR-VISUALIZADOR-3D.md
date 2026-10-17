@@ -43,7 +43,7 @@ feita, por quem e há quanto tempo.
 
 ### #2.1 — Configuração: fontes e cores
 
-**Próximo passo:** plano aprovado (2026-10-17 11:42); pegar quando as dependências estiverem ✅, só pelo modelo da linha `Modelo`.
+**Próximo passo:** ✅ Concluída (2026-10-17 11:47). Nada a fazer; a #2.2, a #2.3 e a #2.5 já podem ser pegas.
 
 - **Nível:** LEVE — só constantes, sem lógica.
 - **Modelo:** só Haiku — nunca outro.
@@ -52,7 +52,14 @@ feita, por quem e há quanto tempo.
   👀 âmbar, ⏹️ cinza, contorno de reserva parada, medidas da cena), conforme `CLAUDE.md` §2 e §4.
 - **Critérios de aceitação:** os 2 arquivos exportam só constantes nomeadas, com JSDoc;
   `node --check` passa.
-- **Entrega:** — · **Verificação:** —
+- **Entrega:** commit de fechamento da #2.1 (`git log --grep="#2.1"`): `assets/js/config/fontes.js`
+  (`FONTES_QUADRO`, `INTERVALO_LEITURA_MS`, `CAMINHO_QUADRO`, `BRANCH_QUADRO` e os dois limites de
+  24 h usados pelo modelo) e `assets/js/config/cores.js` (`CORES_NIVEL`, cores de 👀, ⏹️ e reserva
+  parada, medidas da cena).
+- **Verificação:** os dois arquivos têm sintaxe válida e importam sem erro: `fontes` traz as 2
+  fontes, intervalo 60000, branch `main` e caminho `tasks/STATUS.md`; `cores` traz os 4 níveis.
+  Nenhuma linha passa de 100 caracteres. Como o repositório não é `"type": "module"`, o
+  `node --check` direto recusaria o `export`: a checagem foi feita numa cópia `.mjs` temporária.
 
 ### #2.2 — Página: HTML, import map e CSS
 
