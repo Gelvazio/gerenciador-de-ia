@@ -19,6 +19,8 @@ quadros do `aulasenai` e do `dashboard-ai`: qual tarefa, por quem e há quanto t
 |---|---|---|---|---|---|---|---|
 | **#2-17afd6cb-ac6a-4e06-89b5-d3279a747688** | **Construir o visualizador 3D de tasks (projeto todo, conforme o `CLAUDE.md`)** | 🟡 Média | — | — | ⬜ Pendente (plano aprovado 2026-10-17 11:42) | — (não reservável) | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
 | #2.10 | `README.md` e conferência na tela · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | #2.9 | ⬜ Pendente | — | [002-17afd6cb](etapas/ETAPA-002-17afd6cb-CONSTRUIR-VISUALIZADOR-3D.md) |
+| **RL-988F933E-NIVEIS-E-MODELOS** | **Ajustar o projeto à regra niveis-e-modelos.md (rules-local 2026-10-18-988f933e)** | 🟡 Média | — | — | ⬜ Pendente | — (não reservável) | [006-a6d57b86](etapas/ETAPA-006-a6d57b86-AJUSTAR-NIVEIS-E-MODELOS.md) |
+| RL-988F933E-NIVEIS-E-MODELOS.1 | Atualizar a tabela de níveis do `CLAUDE.md` (§8) (OpenCode, Qoder e DeepSeek em PESADO) · `LEVE · effort low` | 🟡 Média | LEVE · só Haiku | — | ⬜ Pendente | — | [006-a6d57b86](etapas/ETAPA-006-a6d57b86-AJUSTAR-NIVEIS-E-MODELOS.md) |
 
 ## Escopo do projeto
 
@@ -34,6 +36,7 @@ Página estática que lê o `tasks/STATUS.md` dos repositórios públicos `Gelva
 | 003-c61319f5 | Gatilho `;` = pegue a próxima tarefa do seu modelo (#3, pedida em 2026-10-17 11:53) | [ETAPA-003-c61319f5-GATILHO-PONTO-E-VIRGULA.md](etapas/ETAPA-003-c61319f5-GATILHO-PONTO-E-VIRGULA.md) |
 | 004-7017f12c | O visualizador nunca consome token de IA (#4, pedida em 2026-10-17 12:30) | [ETAPA-004-7017f12c-SEM-TOKEN-DE-IA.md](etapas/ETAPA-004-7017f12c-SEM-TOKEN-DE-IA.md) |
 | 005-e52472de | Uma sessão de IA por vez nesta pasta (#5, pedida em 2026-10-17 13:43) | [ETAPA-005-e52472de-UMA-SESSAO-POR-VEZ.md](etapas/ETAPA-005-e52472de-UMA-SESSAO-POR-VEZ.md) |
+| 006-a6d57b86 | Ajustar o projeto à regra niveis-e-modelos.md (RL-988F933E, pedida em 2026-10-18 13:41) | [ETAPA-006-a6d57b86-AJUSTAR-NIVEIS-E-MODELOS.md](etapas/ETAPA-006-a6d57b86-AJUSTAR-NIVEIS-E-MODELOS.md) |
 
 ## Riscos
 
